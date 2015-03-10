@@ -1,5 +1,0 @@
-MongoDB krittiikkiä: 
-
-Sarah Mei, Why You Should Never Use MongoDB 
-http://www.sarahmei.com/blog/2013/11/11/why-you-should-never-use-mongodb/
-
