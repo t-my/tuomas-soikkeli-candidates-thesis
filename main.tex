@@ -195,6 +195,11 @@ Keywords: NoSQL, database, non-relational \hfill
 \addtocontents{toc}{\protect\renewcommand{\protect\cftsecleader}{\protect\cftdotfill{\protect\cftsecdotsep}}}
 
 %contents
+\jyusection{ESIPUHE}
+Tämä tutkielma on tehty \LaTeX-ladontajärjestelmällä, jota suosittelen lämpimästi kaikille tutkielman kirjoittajille. Tutkimussuunnitelman kirjoittamisen aikaan Jyväskylän Yliopiston Tietojärjestelmätieteiden opiskelijoille oli tarjolla vain Microsoft Word -dokumenttipohja, jonka moninaiset ongelmat saivat minut harkitsemaan muita vaihtoehtoja. Tuloksena syntyi dokumenttipohja, jonka olen julkaissut avoimena lähdekoodina. Varoituksen sanana voin sanoa, että siirtymä tavanomaisista tekstinkäsittelyohjelmista ei ole helppo. Opettelu vaatii runsaasti aikaa, kuten tämän tutkielman tekeminen osoitti.
+
+Päädyin käyttämään tekstin ja koodin muokkamiseen web-pohjaista, sekä ilmaista ShareLatex (http://www.sharelatex.com) -palvelua, joka suoraviivaistaa monia \LaTeX:n sudenkuoppia. Lähdekoodi on saatavilla kokonaisuudessaan osoitteesta: https://github.com/t-my/tuomas-soikkeli-candidates-thesis
+
 \jyusection{JOHDANTO}
 
 Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä prosesseja. Siten datamäärien kasvaessa eksponentiaalisesti on siirrytty käyttämään ei-relaationaalisia tietokantoja. Nämä järjestelmät eivät ole kuitenkaan uusi keksintö. 
@@ -301,9 +306,9 @@ CAP-teoreema esittää, että on olemassa kolme tärkeintä vaatimusta hajautetu
 
 \subsection{BASE}
 
-CAP-teoreeman mukaiset hajautetut järjestelmät eivät voi enää toteuttaa kaikkia ACID-ominaisuuksia. On mahdollista kuitenkin tehdä järjestelmä, jossa transaktioiden reliabiliteetti tuotetaan jonkin ajan kuluttua, ei välittömästi. \citeA{vogels2009eventually} esitteli lopulta oikeellisen (engl. evetual consistency) oikeellisuusmallin, jonka avulla \citeA{pritchett2008base} johti BASE oikeellisuusmallin. BASE (engl. Basically Available, Soft state, Eventual consistency) on lyhennelmä suomen kielen sanoista: periaatteessa saatavilla, pehmeä tila ja lopulta oikea. Toisin sanottuna BASE on oikeellisuusmalli transaktioille, joka ei takaa oikeellisuutta heti. Sen sijaan oikeellisuus taataan tietyn ajan kuluttua, missä aika rippuu järjestelmän muista ominaisuuksista tai muuttujista kuten senhetkisen kuorman määrästä. 
+CAP-teoreeman mukaiset hajautetut järjestelmät eivät voi enää toteuttaa kaikkia ACID-ominaisuuksia. On mahdollista kuitenkin tehdä järjestelmä, jossa transaktioiden reliabiliteetti tuotetaan jonkin ajan kuluttua, ei välittömästi. \citeA{vogels2009eventually} esitteli lopulta oikeellisen (engl. eventual consistency) oikeellisuusmallin, jonka avulla \citeA{pritchett2008base} johti BASE-oikeellisuusmallin. BASE (engl. Basically Available, Soft state, Eventual consistency) on lyhennelmä suomen kielen sanoista: periaatteessa saatavilla, pehmeä tila ja lopulta oikea. Toisin sanottuna BASE on oikeellisuusmalli transaktioille, joka ei takaa oikeellisuutta heti. Sen sijaan oikeellisuus taataan tietyn ajan kuluttua, missä aika rippuu järjestelmän muista ominaisuuksista tai muuttujista, kuten senhetkisen kuorman määrästä. 
 
-BASE ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä saattaa palauttaa vanhentuneen arvon, jonka tulisi jo olla päivittynyt. Esimerkiksi sosiaalisen median data ei tarvitse olla reaaliaikaisesti saatavilla, vaan riittää että tieto leviää servereiden välillä kohtuullisen ajan kuluessa. Tietokantaa suuniteltaessa ACID-ominaisuuksien sijasta BASE oikeellisuusmallin valitseminen antaa mahdollisuuden kehittää erittäin tehokkaita tietokantajärjestelmiä, koska tiedon oikeellisuudesta ei tarvitse varmistua välittömästi \cite{Bailis:2013:ECT:2460276.2462076}.
+BASE-ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä saattaa palauttaa vanhentuneen arvon, jonka tulisi jo olla päivittynyt. Esimerkiksi sosiaalisen median data ei tarvitse olla reaaliaikaisesti saatavilla, vaan riittää että tieto leviää servereiden välillä kohtuullisen ajan kuluessa. Tietokantaa suuniteltaessa ACID -ominaisuuksien sijasta BASE  -oikeellisuusmallin valitseminen antaa mahdollisuuden kehittää erittäin tehokkaita tietokantajärjestelmiä, koska tiedon oikeellisuudesta ei tarvitse varmistua välittömästi \cite{Bailis:2013:ECT:2460276.2462076}.
 
 \jyusection{NoSQL}
 
