@@ -205,7 +205,7 @@ Tämä tutkielma selvittää kirjallisuuskatsauksen avulla aluksi NoSQL-tieto\-k
 
 \jyusection{NOSQL-TIETOKANTOJEN SYNTY JA KEHITYS}
 
-Tässä kappaleessa kerrotaan NoSQL-tietokantojen kehittämiseen johtaneita syitä ja sitä edeltäviä ajanjaksoja sekä tapahtumia. Aluksi tutkitaan SQL-tietokantojen kehitystä ja relaatiomallin vaikutusta tiedonkäsittelyyn. Sen jälkeen kerrotaan miten ACID-ominaisuudet ovat olleet tärkeässä asemassa relaatiotietokantoja. Tämän jälkeen kerrotaan kuinka tiedon valtava massa verkkoliikenteessä on muuttanut tiedonkäsittelyn vaatimuksia ja näinollen tietokannan vaatimuksia suhteessa käsiteltävän tiedon määrään. Lopuksi esitellään CAP-teoreema ja sen pohjalta kehitetty oikeellisuusmalli BASE, joka mahdollistaa tiedon tehokkaan käsittelyn hajautetussa ympäristössä.
+Tässä luvussa kerrotaan NoSQL-tietokantojen kehittämiseen johtaneita syitä ja sitä edeltäviä ajanjaksoja sekä tapahtumia. Aluksi tutkitaan SQL-tietokantojen kehitystä ja relaatiomallin vaikutusta tiedonkäsittelyyn. Sen jälkeen kerrotaan miten ACID-ominaisuudet ovat olleet tärkeässä asemassa relaatiotietokantoja. Tämän jälkeen kerrotaan kuinka tiedon valtava massa verkkoliikenteessä on muuttanut tiedonkäsittelyn vaatimuksia ja näinollen tietokannan vaatimuksia suhteessa käsiteltävän tiedon määrään. Lopuksi esitellään CAP-teoreema ja sen pohjalta kehitetty oikeellisuusmalli BASE, joka mahdollistaa tiedon tehokkaan käsittelyn hajautetussa ympäristössä.
 
 \subsection{SQL-tietokannat ja relaatiomalli}
 
@@ -262,7 +262,7 @@ Lyhennys ACID (engl. Atomicity, Consistency, Isolation, Durability) koostuu suom
 
 \end{itemize}
 
-Seuraavassa alakappaleessa esitellään tiedon määrän kasvaminen ja sen aiheuttamat kustannukset ACID-ominaisuudet täyttävässä järjestelmässä. 
+Seuraavassa alaluvussa esitellään tiedon määrän kasvaminen ja sen aiheuttamat kustannukset ACID-ominaisuudet täyttävässä järjestelmässä. 
 
 \subsection{Tiedon valtava massa}
 
@@ -270,7 +270,7 @@ Internetin kehityksen myötä tietokantojen vaatimukset ovat kuitenkin muuttunee
 
 Näin ollen tarvitaan erittäin tehokkaita järjestelmiä, jotka pystyvät prosessoimaan tietoa petatavu -luokassa \cite{han2011survey}. Näihin vaatimuksiin perinteiset SQL-tietokannat eivät pysty enää vastaamaan kunnolla. SQL-tietokantojen käsittelee dataa ACID-ominaisuuksia noudattaen\cite{pokorny2013nosql}. Tästä johtuen ACID-omi\-nai\-suu\-det aiheuttavat tallennettavalle tiedolle kiinteitä kustannuksia koska jokaisen yksinkertaisen solun ja rivin tallentamisen yhteydessä pitää varmistua tietokannan transaktioiden luotettavuudesta. Tämä hidastaa merkittävästi SQL-tietokantojen nopeutta kun dataa on runsaasti. Tuhansien yhtäaikaisten transaktoiden luotettava käsittely ei ole enää mahdollista, sillä tiedon tallentamisen ja käsittelyn kustannukset alkavat kasvaa eksponentiaalisesti tietyn rajapyykin jälkeen.
 
-Tietokantajärjestelmille on muodostunut uusi haaste. Tietoa on yksikertaisesti liikaa, jotta sitä voitaisiin käsitellä tietokannassa käyttäen ACID-ominaisuuksia. Seuraavassa kappaleessa esitellään teoreema, joka kuvaa miten järjestelmän ominaisuuksia pitää muokata, erityisesti heikentämällä transaktioiden luotettavuutta, jotta voidaan kustannustehokkaasti tallentaa ja käsitellä tiedon valtaa massaa.
+Tietokantajärjestelmille on muodostunut uusi haaste. Tietoa on yksikertaisesti liikaa, jotta sitä voitaisiin käsitellä tietokannassa käyttäen ACID-ominaisuuksia. Seuraavassa luvussa esitellään teoreema, joka kuvaa miten järjestelmän ominaisuuksia pitää muokata, erityisesti heikentämällä transaktioiden luotettavuutta, jotta voidaan kustannustehokkaasti tallentaa ja käsitellä tiedon valtaa massaa.
 
 \subsection{CAP-teoreema}
 
@@ -307,7 +307,8 @@ BASE ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä sa
 
 \jyusection{NoSQL}
 
-Tässä kappaleessa esitellään NoSQL-tieto\-kannat, jotka pyrkivät ratkaisemaan tiedonkäsittelyn volyymin jatkuvasti uusiutuvan kertaluokan luomat haasteet. Eri No\-SQL-tietokannat eroavat huomattavasti toisistaan, mutta kappaleessa esitellään yleisimmät ominaispiirteet, joiden katsotaan määrittelevän No\-SQL-tietokantoja. 
+Tässä luvussa esitellään NoSQL-tieto\-kannat, jotka pyrkivät ratkaisemaan tiedonkäsittelyn volyymin jatkuvasti kasvavan tiedon määrän luomat haasteet. Eri No\-SQL-tietokannat eroavat huomattavasti toisistaan, näillä tietokannoilla katsotaan olevan ominaispiirteitä, joiden katsotaan määrittelevän No\-SQL-tietokantoja. 
+
 Aluksi esitellään NoSQL:n määritelmä, jonka jälkeen luokitellaan ne neljään eri kategoriaan ja tutkitaan niiden käyttötarkoituksia erityisesti suhteessa tiedon valtavaan massaan. 
 
 \subsection{Määritelmä}
@@ -424,7 +425,7 @@ Myös NoSQL nimitys saa kritiikkiä. \citeA{stonebraker2010sql} mukaan NoSQL-tie
 
 \jyusection{LUOKITTELU JA KÄYTTÖKOHTEET}
 
-Aluksi tässä kappaleessa luokitellaan NoSQL-tietokannat tietokannan perusteella, jonka jälkeen esitellään jokainen tietomalli omana kokonaisuutena, sekä esitellään esimerkkejä tietomalleihin perustuvista tietokantatuotteista.
+Aluksi tässä luvussa luokitellaan NoSQL-tietokannat tietokannan perusteella, jonka jälkeen esitellään jokainen tietomalli omana kokonaisuutena, sekä esitellään esimerkkejä tietomalleihin perustuvista tietokantatuotteista.
 
 \subsection{Luokittelu}
 
@@ -432,7 +433,7 @@ NoSQL-tietokantojen luokittelusta ei olla saavutettu yhtenevää luokittelutapaa
 
 Tässä tutkielmassa tutkittavat tietokannat luokitellaan neljään tyyppiin tietomallin perusteella: avain-arvopari-varasto (key-value store), saraketietokanta (column based databases), dokumenttitietokanta (document store) ja verkkotietokanta. (graph database). Tietokannat on koottu myös taulukkoon \ref{luokittelu}. Tietokantojen luokitteluun on käytetty \url{http://nosql-database.org/} -sivustoa, joka on kerännyt yhteen eri valmistajien NoSQL-tuotteita vuodesta 2009. 
 
-Seuraavaksi esitellään luokitellut tietomallit omassa alakappaleissaa ja jokaisen tietomallin kohdalla käydään läpi tyypilliset ominaisuudet ja soveltuvuus eri käyttökohteisiin. Näiden lisäksi esitellään tietomalleja esimerkein.
+Seuraavaksi esitellään luokitellut tietomallit omassa alaluvuissaan ja jokaisen tietomallin kohdalla käydään läpi tyypilliset ominaisuudet ja soveltuvuus eri käyttökohteisiin. Näiden lisäksi esitellään tietomalleja esimerkein.
 
 \begin{table}[H]
   \centering
