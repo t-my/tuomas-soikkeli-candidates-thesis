@@ -202,9 +202,9 @@ Päädyin käyttämään tekstin ja koodin muokkamiseen web-pohjaista, sekä ilm
 
 \jyusection{JOHDANTO}
 
-Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä prosesseja. Siten datamäärien kasvaessa eksponentiaalisesti on siirrytty käyttämään ei-relaationaalisia tietokantoja. Nämä järjestelmät eivät ole kuitenkaan uusi keksintö. 
+Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä prosesseja. Siten datamäärien kasvaessa eksponentiaalisesti on kehitetty ei-relaationaalisia tietokantajärjestelmiä. Näitä järjestelmiä kutsutaan NoSQL -tietokannoiksi. \cite{leavitt2010will, pokorny2013nosql}
 
-Viime vuosien aikana on ilmestynyt uusia, hyvin erilaisiin tietomalleihin perustuvia tietokantajärjestelmiä. Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Yleisesti näitä kutsutaan NoSQL-tietokannoiksi, koska ne eivät perustu relaatiomallin SQL-kieleen.
+Viime vuosien aikana on ilmestynyt uusia, hyvin erilaisia tietokantajärjestelmiä.  Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. \cite{cattell2011scalable,leavitt2010will}
 
 Tämä tutkielma selvittää kirjallisuuskatsauksen avulla aluksi NoSQL-tieto\-kantojen kehitykseen ja historiaan liittyviä seikkoja. Sen jälkeen tutkitaan miksi NoSQL-tieto\-kannat ovat kasvattaneet suosiotaan, miten NoSQL-tietokantoja voidaan luokitella sekä mitä käyttökohteita NoSQL-tietokannoilla on. Samalla selvitetään miten nämä tietokannat eroavat relaatiomallista ja sen tiedon manipulointiin liittyvästä SQL-kielestä.
 
@@ -434,9 +434,9 @@ Aluksi tässä luvussa luokitellaan NoSQL-tietokannat tietokannan perusteella, j
 
 \subsection{Luokittelu}
 
-NoSQL-tietokantojen luokittelusta ei olla saavutettu yhtenevää luokittelutapaa johtuen NoSQL-tietokantojen nuoresta iästä ja niiden ominaisuuksien monimuotoisuudesta. Luokiteltavat järjestelmät vaihtelet suuresti tietomallin ja muiden ominaisuuksien perusteella. Useat näistä ovat myös hybridiversioita, eli tietokantoja, joissa käytetään useampaa tietomallia. 
+NoSQL-tietokantojen luokittelusta ei olla saavutettu yhtenevää luokittelutapaa johtuen NoSQL-tietokantojen nuoresta iästä ja niiden ominaisuuksien monimuotoisuudesta. Luokiteltavat järjestelmät vaihtelet suuresti tietomallin ja muiden ominaisuuksien perusteella. Useat näistä ovat myös hybridiversioita, eli tietokantoja, joissa käytetään useampaa tietomallia. \citeA{tudorica2011comparison} esitti, että NoSQL -tietokannat voidaan luokitella kvalitatiivisin tai kvantitatiivisin perustein. Kvalitatiivinen luokittelu keskittyy mittamaan lähinnä suorituskykyä eri tuotteiden välillä kun taas kvalitatiivinen luokittelu pyrkii erottelemaan eri NoSQL -tietokannat tarpeen vaatimusten tai ominaisuuksien perusteella. 
 
-Tässä tutkielmassa tutkittavat tietokannat luokitellaan neljään tyyppiin tietomallin perusteella: avain-arvopari-varasto (key-value store), saraketietokanta (column based databases), dokumenttitietokanta (document store) ja verkkotietokanta. (graph database). Tietokannat on koottu myös taulukkoon \ref{luokittelu}. Tietokantojen luokitteluun on käytetty \url{http://nosql-database.org/} -sivustoa, joka on kerännyt yhteen eri valmistajien NoSQL-tuotteita vuodesta 2009. 
+Tässä tutkielmassa tutkittavat tietokannat luokitellaan kvalitatiivisesti neljään tyyppiin tietomallin perusteella: avain-arvopari-varasto (key-value store), saraketietokanta (column based databases), dokumenttitietokanta (document store) ja verkkotietokanta. (graph database). Tietokannat on koottu myös taulukkoon \ref{luokittelu}. Tietokantojen luokitteluun on käytetty \url{http://nosql-database.org/} -sivustoa, joka on kerännyt yhteen eri valmistajien NoSQL-tuotteita vuodesta 2009. 
 
 Seuraavaksi esitellään luokitellut tietomallit omassa alaluvuissaan ja jokaisen tietomallin kohdalla käydään läpi tyypilliset ominaisuudet ja soveltuvuus eri käyttökohteisiin. Näiden lisäksi esitellään tietomalleja esimerkein.
 
