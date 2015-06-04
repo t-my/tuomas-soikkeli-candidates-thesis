@@ -136,8 +136,8 @@
 \begin{center}
     \vspace*{5cm}
     \normalsize{Tuomas-Matti Soikkeli} \\
-    \large{NoSQL-tietokannat: vertailu relaatiotietokantoihin ja luokittelu tietomallin sekä käyttökohteiden mukaan}
-    \vfill{}
+    \large{NoSQL-tietokannat: vertailu relaatiotietokantoihin ja luokittelu tietomallin sekä käyttökohteiden mukaan} \\
+        \vfill{}
     \includegraphics[width=0.1\textwidth]{images/jyu.jpg} \\
     \large{JYVÄSKYLÄN YLIOPISTO \\
     TIETOJENKÄSITITTELYTIETEIDEN LAITOS \\
@@ -197,13 +197,16 @@ Keywords: NoSQL, database, non-relational \hfill
 \jyusection{ESIPUHE}
 Tämä tutkielma on tehty \LaTeX-ladontajärjestelmällä, jota suosittelen lämpimästi kaikille tutkielman kirjoittajille. Tutkimussuunnitelman kirjoittamisen aikaan Jyväskylän Yliopiston Tietojärjestelmätieteiden opiskelijoille oli tarjolla vain Microsoft Word -dokumenttipohja, jonka moninaiset ongelmat saivat minut harkitsemaan muita vaihtoehtoja. Tuloksena syntyi dokumenttipohja, jonka olen julkaissut avoimena lähdekoodina. Varoituksen sanana voin sanoa, että siirtymä tavanomaisista tekstinkäsittelyohjelmista ei ole helppo. Opettelu vaatii runsaasti aikaa, kuten tämän tutkielman tekeminen osoitti.
 
-Päädyin käyttämään tekstin ja koodin muokkamiseen web-pohjaista, sekä ilmaista ShareLatex (http://www.sharelatex.com) -palvelua, joka suoraviivaistaa monia \LaTeX:n monimutkaisuuksia. Lähdekoodi on saatavilla kokonaisuudessaan osoitteesta: https://github.com/t-my/tuomas-soikkeli-candidates-thesis
+Päädyin käyttämään tekstin ja koodin muokkamiseen web-pohjaista, sekä ilmaista ShareLatex (http://www.sharelatex.com) -palvelua. ShareLatex-editori ja -kääntäjä suoraviivaistaa monia \LaTeX:n monimutkaisuuksia. Lähdekoodi on saatavilla kokonaisuudessaan osoitteesta: https://github.com/t-my/tuomas-soikkeli-candidates-thesis
 
 \jyusection{JOHDANTO}
 
-Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä prosesseja. Siten datamäärien kasvaessa eksponentiaalisesti on kehitetty ei-relaationaalisia tietokantajärjestelmiä. Näitä järjestelmiä kutsutaan NoSQL -tietokannoiksi. \cite{leavitt2010will, pokorny2013nosql}
+Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä operaatioita. Siten datamäärien kasvaessa eksponentiaalisesti on kehitetty ei-relaationaalisia tietokantajärjestelmiä. Näitä järjestelmiä kutsutaan NoSQL -tietokannoiksi. \cite{leavitt2010will, pokorny2013nosql}
 
-Viime vuosien aikana on ilmestynyt uusia, hyvin erilaisia tietokantajärjestelmiä. Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Myös muita tietomalleja käyttäviä järjestelmiä on runsaasti, mutta tässä tutkielmassa keskitytään näiden neljän tietomallin tutkimiseen. \cite{cattell2011scalable} 
+2000-luvulta alkaen on kehitetty NoSQL-tietokantoja perinteisten relaatiotietokantojen rinnalle.  {\color{red} tähän lisää historiasta ja vertailusta relaatiotietokantoihin..} 
+
+Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Myös muita tietomalleja käyttäviä järjestelmiä on runsaasti, mutta tässä tutkielmassa keskitytään näiden neljän tietomallin tutkimiseen. \cite{cattell2011scalable} {\color{red} lisää tietomalleista..}
+
 
 NoSQL-tietokantojen nuoren iän myötä NoSQL-tietokannoista ei ole kattavaa tutkimustietoa. Tässä tutkielmassa tutkitaan näitä epäselvyyksiä seuraavien tutkimuskysymysten avulla:
 
@@ -219,9 +222,13 @@ NoSQL-tietokantojen nuoren iän myötä NoSQL-tietokannoista ei ole kattavaa tut
 
 \end{itemize}
 
-Tämä tutkielma selvittää kirjallisuuskatsauksen avulla aluksi NoSQL-tieto\-kantojen kehitykseen ja historiaan liittyviä seikkoja. Sen jälkeen tutkitaan miksi NoSQL-tieto\-kannat ovat kasvattaneet suosiotaan, miten NoSQL-tietokantoja voidaan luokitella sekä mitä käyttökohteita NoSQL-tietokannoilla on. Samalla selvitetään miten nämä tietokannat eroavat relaatiomallista ja sen tiedon manipulointiin liittyvästä SQL-kielestä.
+Tämä tutkielma selvittää kirjallisuuskatsauksen avulla aluksi NoSQL-tieto\-kantojen kehitykseen ja historiaan liittyviä seikkoja. Sen jälkeen tutkitaan miksi NoSQL-tieto\-kannat ovat kasvattaneet suosiotaan, miten NoSQL-tietokantoja voidaan luokitella sekä mitä käyttökohteita NoSQL-tietokannoilla on. Samalla selvitetään miten nämä tietokannat eroavat relaatiomallista ja sen tiedon manipulointiin liittyvästä SQL-kielestä. 
 
-\jyusection{NOSQL-TIETOKANTOJEN SYNTY JA KEHITYS}
+Tämän tutkimus selvittää, mihin käyttötarkoituksiin NoSQL-tietokantoja voidaan käyttää.   Lisäksi tutkitaan voidaanko NoSQL-tietokannoilla korvata relaatiotietokannat.
+
+Tämä tutkimuks jakaantuu kolmeen sisältölukuun. Ensimmäisessä sisältöluvussa tutustutaan NoSQL-tietokantojen kehittymiseen johtaneisiin seikkioihin eli historiaan. Tämän lisäksi ensimmäisessä kappalessa käydään läpi teoreettisia viitekehyksiä ja tietokantojen ominaisuuksia. Toisessa kappalessa määrittelyn jälkeen käydään läpi NoSQL-tietokantojen keskisimmät ominaisuudet ja yleisimmät määrittelevät tekijät. Toisen kappaleen lopussa 
+
+\jyusection{NOSQL-TIETOKANTOJEN SYNTY JA KEHITYS \\{\color{red}\tiny{parempi otsikko}}} 
 
 Tässä luvussa kerrotaan NoSQL-tietokantojen kehittämiseen johtaneita syitä ja sitä edeltäviä ajanjaksoja sekä tapahtumia. Aluksi tutkitaan SQL-tietokantojen kehitystä ja relaatiomallin vaikutusta tiedonkäsittelyyn. Sen jälkeen kerrotaan miten ACID-ominaisuudet ovat olleet tärkeässä asemassa relaatiotietokantoja. Tämän jälkeen kerrotaan kuinka tiedon valtava massa verkkoliikenteessä on muuttanut tiedonkäsittelyn vaatimuksia ja näinollen tietokannan vaatimuksia suhteessa käsiteltävän tiedon määrään. Lopuksi esitellään CAP-teoreema ja sen pohjalta kehitetty oikeellisuusmalli BASE, joka mahdollistaa tiedon tehokkaan käsittelyn hajautetussa ympäristössä.
 
@@ -326,14 +333,9 @@ CAP-teoreema esittää, että on olemassa kolme ominaisuutta, jotka vaikuttavat 
 
 Tietokannan valinnassa tulee ottaa huomioon CAP-teoreemassa esitellyt kolme ominaisuutta. Yhdestä niistä on luovuttava. Kuitenkin on esitetty, että jokaiselle ominaisuusparin valinnalle on käyttökohteensa. 
 
-Saatavuuden ja osittamisensietokyvyn omaavat tietokannat ovat usein perinteisä relaatiotietokantoja. Data on aina saatavilla ja tiedon eheys taataan erilaisten tekniikoiden, kuten viite-eheyden avulla. Kuitenkin tietokannan koon kasvaessa tietokannan replikointi verkon yli muuttuu haastelliseksi. 
+Saatavuuden ja osittamisen sietokyvyn omaavat tietokannat ovat usein perinteisä relaatiotietokantoja. Data on aina saatavilla ja tiedon eheys taataan erilaisten tekniikoiden, kuten viite-eheyden avulla. Kuitenkin tietokannan koon kasvaessa tietokannan replikointi verkon yli muuttuu haastelliseksi. 
 
 Saatavuutta ja osittamisen
-
-
-
-
-
 
 \subsection{BASE}
 
