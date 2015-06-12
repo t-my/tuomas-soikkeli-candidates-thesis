@@ -283,24 +283,22 @@ table/.style={matrix of nodes, nodes in empty cells, column sep=-\pgflinewidth, 
 \end{figure}
 
 \subsection{ACID}
-Useiden tutkimusten \cite{gray1981transaction,international1979notes} pohjalta Andreas Reuter ja Theo Härder julkaisivat artikkelin "Principles of Transaction-Oriented Database Recovery" \cite{haerder1983principles}, jossa määriteltiin termi ACID. 
-
-Lyhennys ACID (engl. Atomicity, Consistency, Isolation, Durability) koostuu suomennettuna sanoista atomisuus, eheys, eristyneisyys ja pysyvyys. ACID tarkoittaa joukkoa ominaisuuksia jotka takaavat tietokannan transaktioiden suorituksen luotettavuuden, niin että jokaisen transaktion suorituksen jälkeen pystytään varmistumaan, että halutut operaatiot ovat todella suoritettu. Esimerkkinä voidaan mainita pankkijärjestelmien toimivuus. Siirrettäessä rahaa toisen käyttäjän tilille on varmistettava, että transaktio on todella tapahtunut alusta loppuun. Mikäli transaktion suorituksen aikana tapahtuu järjestelmän kaatuminen, on palattava alkuperäiseen tilaan, jolloin transaktio alkoi. 
+Tietokanta sisältää suuren määrän tietoja, joita monet ohjelmat voivat samaan aikaa hakea ja päivittää. Jotta voidaan varmistaa se, etteivät samaan tietoon kohdistuvat operaatiot samaan aikaan suoritetteuina tuota ongelmia, tarvitaan jokin samanaikaisten tapahtumien hallintamekanismi. Andreas Reuter ja Theo Härder julkaisivat vuonna 1983 artikkelin "Principles of Transaction-Oriented Databasse Recovery", joissa he aiempiin tutkimuksiin pohjautuen \cite{gray1981transaction,international1979notes} määrittelivät termin ACID, joka on lyhenne sanoista Atomicity, Consistency, Isolation ja Durability. Vastaavat suomenkieliset termit ovat atomisiuus, eheys, eristyneisyys ja pysyvyys. ACID tarkoittaa joukkoa ominaisuuksia, jotka takaavat tietokannan tapahtumien suorituksen luotettavuuden niin, että jokaisen tapahtuman suorituksen jälkeen pystytään varmistumaan, että halutut operaatiot ovat oikein suoritettu. Esimerkiksi siirrettäessä rahaa toisen käyttäjän tilille on varmistettava, että tapahtuma, jolla nostetaan rahaa toiselta tililtä ja pannaan vastaava summa toiselle tilille, on todella tapahtunut alusta loppuun. Mikäli tapahtuman suorituksen aikana sattuu järjestelmän kaatuminen, on palattava alkuperäiseen järjestelmän tilaan. Seuraavaksi annettaan edellä mainituille termeille lyhyet määritelmät \cite{haerder1983principles}:
 
 
 \begin{itemize}
 
-\item \textbf{Atomisuus:} Transaktion aikana suoritetaan joko kaikki suorituksen osat tai ei ainuttakaan. Täten jos yksi osa transaktiosta epäonnistuu, koko transaktio epäonnistuu.
+\item \textbf{Atomisuus:} Tapahtuman aikana suoritetaan joko kaikki tietokantaoperaatiot tai ei ainuttakaan. Täten jos yksi osa tapahtumasta epäonnistuu, koko transaktio epäonnistuu.
 
-\item \textbf{Eheys:} Transaktion tulee jatkuvasti täyttää kaikki säännöt ja protokollat, jotka on määritelty järjestelmässä. Transaktio ei riko näitä sääntöjä, joten tietokanta pysyy yhtenäisessä tilassa transaktion suorituksen aikana. 
+\item \textbf{Eheys:} Tapahtuman tulee jatkuvasti täyttää kaikki eheyssäännöt. Tapahtuma ei riko näitä sääntöjä, joten tietokanta pysyy yhtenäisessä tilassa tapahtuman suorituksen aikana. 
 
-\item \textbf{Eristyneisyys:} Transaktiot eivät voi hallita toisia transaktioita, jotka ovat kesken. Näinollen jokainen transaktio on itsenäinen. 
+\item \textbf{Eristyneisyys:} Tapahtuma tulee voida suorittaan ikään kuin muita samanaikaisia tapahtumia ei olisikaan. Toisin sanoen muiden tapahtumien ei tule vaikuttaa sen suorittamiseen. 
 
-\item \textbf{Pysyvyys:} Transaktion valmistuessa sitä ei voida peruuttaa, sen tila on pysyvä. Transaktio selviää järjestelmän sammuttamisen.
+\item \textbf{Pysyvyys:} Vahvistetun (commited) tapahtuman tekemät muutokset tietokannassa ovat lopullisia. Niihin eivät vaikuta mahdolliset virheet tai häiriöt.
 
 \end{itemize}
 
-Seuraavassa alaluvussa esitellään tiedon määrän kasvaminen ja sen aiheuttamat kustannukset ACID-ominaisuudet täyttävässä järjestelmässä. 
+ACID-ominaisuuksien varaan on relaatiotietokannoille kehitetty mekanismeja (esim. lukitusprotokollat, toipuminen), joilla pyritään turvaamaan tietokannan eheys kaikissa olosuhteissa. Seuraavassa alaluvussa esitellään tiedon määrän kasvaminen ja sen aiheuttamat kustannukset ACID-ominaisuudet täyttävässä järjestelmässä. 
 
 \subsection{Tiedon valtava massa}
 
