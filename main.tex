@@ -124,7 +124,7 @@
     \bibliography
     }
     
-% suprress underfull badness warnings
+% suppress underfull badness warnings
 \hbadness = 10000
 
 
@@ -137,12 +137,12 @@
 \begin{center}
     \vspace*{5cm}
     \normalsize{Tuomas-Matti Soikkeli} \\
-    \large{NoSQL-tietokannat: vertailu relaatiotietokantoihin ja luokittelu tietomallin sekä käyttökohteiden mukaan} \\
+    \large{NoSQL-tietokannat: perusominaisuudet ja luokittelu.} \\
         \vfill{}
     \includegraphics[width=0.1\textwidth]{images/jyu.jpg} \\
     \large{JYVÄSKYLÄN YLIOPISTO \\
     TIETOJENKÄSITITTELYTIETEIDEN LAITOS \\
-    2013}
+    2015}
 \end{center} 
 
 %remove page numbering from front page
@@ -283,8 +283,12 @@ table/.style={matrix of nodes, nodes in empty cells, column sep=-\pgflinewidth, 
 \end{figure}
 
 \subsection{ACID}
-Tietokanta sisältää suuren määrän tietoja, joita monet ohjelmat voivat samaan aikaa hakea ja päivittää. Jotta voidaan varmistaa se, etteivät samaan tietoon kohdistuvat operaatiot samaan aikaan suoritetteuina tuota ongelmia, tarvitaan jokin samanaikaisten tapahtumien hallintamekanismi. Andreas Reuter ja Theo Härder julkaisivat vuonna 1983 artikkelin "Principles of Transaction-Oriented Databasse Recovery", joissa he aiempiin tutkimuksiin pohjautuen \cite{gray1981transaction,international1979notes} määrittelivät termin ACID, joka on lyhenne sanoista Atomicity, Consistency, Isolation ja Durability. Vastaavat suomenkieliset termit ovat atomisiuus, eheys, eristyneisyys ja pysyvyys. ACID tarkoittaa joukkoa ominaisuuksia, jotka takaavat tietokannan tapahtumien suorituksen luotettavuuden niin, että jokaisen tapahtuman suorituksen jälkeen pystytään varmistumaan, että halutut operaatiot ovat oikein suoritettu. Esimerkiksi siirrettäessä rahaa toisen käyttäjän tilille on varmistettava, että tapahtuma, jolla nostetaan rahaa toiselta tililtä ja pannaan vastaava summa toiselle tilille, on todella tapahtunut alusta loppuun. Mikäli tapahtuman suorituksen aikana sattuu järjestelmän kaatuminen, on palattava alkuperäiseen järjestelmän tilaan. Seuraavaksi annettaan edellä mainituille termeille lyhyet määritelmät \cite{haerder1983principles}:
+Tietokanta sisältää suuren määrän tietoja, joita monet ohjelmat voivat samaan aikaa hakea ja päivittää. Jotta voidaan varmistaa se, etteivät samaan tietoon kohdistuvat operaatiot samaan aikaan suoritetteuina tuota ongelmia, tarvitaan jokin samanaikaisten tapahtumien hallintamekanismi. Andreas Reuter ja Theo Härder julkaisivat vuonna 1983 artikkelin "Principles of Transaction-Oriented Databasse Recovery", joissa he aiempiin tutkimuksiin pohjautuen \cite{gray1981transaction,international1979notes} määrittelivät termin ACID, joka on lyhenne sanoista Atomicity, Consistency, Isolation ja Durability. Vastaavat suomenkieliset termit ovat atomisiuus, eheys, eristyneisyys ja pysyvyys. 
 
+ACID tarkoittaa joukkoa ominaisuuksia, jotka takaavat tietokannan tapahtumien suorituksen luotettavuuden niin, että jokaisen tapahtuman suorituksen jälkeen pystytään varmistumaan, että halutut operaatiot ovat oikein suoritettu. Esimerkiksi siirrettäessä rahaa toisen käyttäjän tilille on varmistettava, että tapahtuma, jolla nostetaan rahaa toiselta tililtä ja pannaan vastaava summa toiselle tilille, on todella tapahtunut alusta loppuun. Mikäli tapahtuman suorituksen aikana sattuu järjestelmän kaatuminen, on palattava alkuperäiseen järjestelmän tilaan. Seuraavaksi annettaan edellä mainituille termeille lyhyet määritelmät \cite{haerder1983principles}:
+
+
+\newpage
 
 \begin{itemize}
 
@@ -302,36 +306,43 @@ ACID-ominaisuuksien varaan on relaatiotietokannoille kehitetty mekanismeja (esim
 
 \subsection{Tiedon valtava massa}
 
-Internetin kehityksen myötä tietokantojen vaatimukset ovat kuitenkin muuttuneet. \citeA{manyika2011big} esitti tutkimuksessaan, että alle tuhannen työntekijän yrityksillä on keskimäärin 3,8 petatavua dataa tallennettuna ja vuotuinen datan määrän kasvusuhde on neljäkymmentä prosenttia. Tätä tiedon jatkuvasti kasvavaa tulvaa kutsutaan tiedon valtavaksi massaksi (engl. Big Data).
+Internetin kehityksen myötä tietokantojen vaatimukset ovat muuttuneet. \citeA{manyika2011big} esitti tutkimuksessaan, että alle tuhannen työntekijän yrityksillä on keskimäärin 3,8 petatavua dataa tallennettuna ja vuotuinen datan määrän kasvus on neljäkymmentä prosenttia. Tätä tiedon jatkuvasti kasvavaa tulvaa kutsutaan massadataksi (engl. Big Data).
 
-Näin ollen tarvitaan erittäin tehokkaita järjestelmiä, jotka pystyvät prosessoimaan tietoa petatavu -luokassa \cite{han2011survey}. Näihin vaatimuksiin perinteiset SQL-tietokannat eivät pysty enää vastaamaan kunnolla. SQL-tietokantojen käsittelee dataa ACID-ominaisuuksia noudattaen\cite{pokorny2013nosql}. Tästä johtuen ACID-omi\-nai\-suu\-det aiheuttavat tallennettavalle tiedolle kiinteitä kustannuksia koska jokaisen yksinkertaisen solun ja rivin tallentamisen yhteydessä pitää varmistua tietokannan transaktioiden luotettavuudesta. Tämä hidastaa merkittävästi SQL-tietokantojen nopeutta kun dataa on runsaasti. Tuhansien yhtäaikaisten transaktoiden luotettava käsittely ei ole enää mahdollista, sillä tiedon tallentamisen ja käsittelyn kustannukset alkavat kasvaa eksponentiaalisesti tietyn rajapyykin jälkeen.
+Näin ollen tarvitaan erittäin tehokkaita järjestelmiä, jotka pystyvät prosessoimaan suuria tietomääriä \cite{han2011survey}. Näihin vaatimuksiin perinteiset SQL-tietokannat eivät pysty enää vastaamaan kunnolla. Koska SQL-tietokannat käsittelevät dataa ACID-ominaisuuksia noudattaen\cite{pokorny2013nosql}, jokaisen yksinkertaisen solun ja rivin tallentamisen yhteydessä pitää varmistua tietokannan tapahtumien luotettavuudesta. Tämä hidastaa merkittävästi käsittelyn nopeutta, kun dataa on runsaasti. Yhtäaikaisten tapahtumien luotettava käsittely ei ole enää mahdollista, sillä tiedon tallentamisen ja käsittelyn kustannukset alkavat kasvaa eksponentiaalisesti käsiteltävän tietomäärän kasvaessa suureksi.
 
-Tietokantajärjestelmille on muodostunut uusi haaste. Tietoa on yksikertaisesti liikaa, jotta sitä voitaisiin käsitellä tietokannassa käyttäen ACID-ominaisuuksia. Seuraavassa luvussa esitellään teoreema, joka kuvaa miten järjestelmän ominaisuuksia pitää muokata, erityisesti heikentämällä transaktioiden luotettavuutta, jotta voidaan kustannustehokkaasti tallentaa ja käsitellä tiedon valtaa massaa.
-
-\subsection{CAP-teoreema}
-
-Konferenssissa ACM Symposium on the Principles of Distributed Computing Eric \citeA{brewer} kuviossa \ref{cap} esitetyn CAP-teoreeman, jota kutsutaan myös Brewerin teoreemaksi.
-
-CAP-teoreema esittää, että on olemassa kolme ominaisuutta, jotka vaikuttavat hajautetun järjestelmän suunnitteluun, toteutukseen ja käyttönottoon. Nämä ominaisuudet ovat eheys, saatavuus ja osittamisen sietokyky eli CAP (engl. consistency, availability, partition tolerance).
+Tietokantajärjestelmille on muodostunut uusi haaste. Tietoa on yksikertaisesti liikaa, jotta sitä voitaisiin käsitellä käyttäen ACID-ominaisuuksia. Seuraavaksi esitellään teoreema, joka auttaa väljentämään tietokannalle asetettuja vaatimuksia.
 
 \newpage
 
-\begin{itemize}
-\item \textbf{Eheys:} Jokainen verkon solmu saa yhtäaikaiseen hakuun saman tuloksen.
-\item \textbf{Saatavuus:} Asiakasohjelmien on aina pystyttavä kirjoittamaan ja lukemaan tietoa.
-\item \textbf{Osittamisen sietokyky:} Järjestelmä toimii, vaikka verkkoyhteys joidenkin solmujen välillä katkeaa
-\end{itemize}
+\subsection{CAP-teoreema ja BASE-oikeellisuusmalli}
 
+Eric Brewer esitti vuonna 2000 \cite{brewer} kuviossa 2 esitetyn CAP-teoreeman, jota kutsutaan myös Brewerin teoreemaksi. CAP-teoreeman mukaan, on olemassa kolme ominaisuutta, jotka vaikuttavat hajautetun järjestelmän suunnittelun, toteutukseen ja käyttöönottoon. Nämä ominaisuudet ovat eheys, saatavuus ja pirstoutumisen sietokyky eli CAP (engl. consistency, availability, partition tolerance). 
+
+Eheys (consistency tarkoittaa, että tietokannan tosinteiden (replicates) tulee olla eheitä, jolloin hajautetun järjestelmän solmut näkevät kunkin tiedon samanlaisena. Saatavuus (availability) tarkoittaa, että palvelu (tietyn tiedon lukeminen tai kirjoittaminen) on saatavissa silloin, kun sitä tarvitaan. Pirstoutumisen sietokyky (partition tolerance) tarkoittaa, että verkon pirstoutuessa tiedonkäsittelyn tulee jatkua edelleen solmuissa \cite[s. 10]{celko2013joe}.
+
+% CAP-theorem
 \begin{figure}[H]
 \begin{center}
     \begin{tikzpicture}
     \begin{scope}[fill opacity=0.5]
-        \fill[red] (-3,0) circle (4cm);
-        \fill[green] (3,0) circle (4cm);
-        \fill[blue] (0,5) circle (4cm);
-        \draw (-3,0) circle (4cm) node[below]{$Eheys$};
-        \draw (3,0) circle (4cm) node[below]{$Osittamisen sietokyky$};
-        \draw (0,5) circle (4cm) node[below]{$Saatavuus$};
+        
+        \draw
+        [fill=red](-3,0) 
+        circle (4cm) 
+            node {Pirstoutumisen}
+            node[below] {sietokyky}
+            node[above right=2.5cm, xshift=-0.8cm,yshift=0.55cm] {$A$};
+        \draw
+        [fill=green]
+        (3,0) circle (4cm) 
+            node {$Saatavuus$}
+            node[left=2.75cm] {$B$};
+        \draw
+        [fill=blue](0,5) 
+        circle (4cm) 
+            node {$Eheys$} 
+            node[below right=2.5cm,xshift=-0.4cm,yshift=-0.3cm] {$C$};
+            
     \end{scope}
     \end{tikzpicture}
     \caption[CAP-TEOREEMA]{Hajautetun järjestelmän kolme ominaisuutta: CAP-teoreema (Brewerin teoreema)}
@@ -342,17 +353,12 @@ CAP-teoreema esittää, että on olemassa kolme ominaisuutta, jotka vaikuttavat 
 
 \noindent Brewerin mukaan ei ole mahdollista taata jokaisen kolmen vaatimuksen toimivuutta. Tämä tulee ottaa huomioon järjestelmän suunnittelussa. Jos näin ei tehdä, voi lopputuloksena olla, että jokainen esitetty ominaisuus järjestelmässä rikkoutuu yhtä aikaa. \citeA{gilbert2002brewer} todistivat Brewerin olleen oikeassa ja tätä pidetäänkin yleisesti hyväksyttävänä lähestymistapana tietokantojen tarkasteluun \cite<mm.>{vogels2009eventually, cattell2011scalable, pokorny2013nosql}.
 
-Tietokannan valinnassa tulee ottaa huomioon CAP-teoreemassa esitellyt kolme ominaisuutta. Yhdestä niistä on luovuttava. Kuitenkin on esitetty, että jokaiselle ominaisuusparin valinnalle on käyttökohteensa. 
+Tietokannan valinnassa tulee ottaa huomioon CAP-teoreemassa esitellyt kolme ominaisuutta. Yhdestä niistä on luovuttava. Saatavuuden ja eheyden omaavat tietokannat (C) ovat usein perinteisiä relaatiotietokantoja. Data on aina saatavilla ja tiedon eheys taataan erilaisten tekniikoiden, kuten viite-eheyden avulla. Näillä tietokannoilla on kuitenkin hankaluuksia verkon pirstaloituessa. Eheyttä ja pirstoutumisen sietokykyä tarjoavat (A) tietokannat puolestaan eivät voi taata tiedon saatavuutta. Saatavuutta ja pirstoutumisen sietokyvykä tarjoavat tietokannat (B) saavuttavat lopulta oikeellisen tiedon. \cite{hurst2010visual}
 
-{\color{red} tähän CA,PA ja CP parien kuvaus} Saatavuuden ja osittamisen sietokyvyn omaavat tietokannat ovat usein perinteisä relaatiotietokantoja. Data on aina saatavilla ja tiedon eheys taataan erilaisten tekniikoiden, kuten viite-eheyden avulla. Kuitenkin tietokannan koon kasvaessa tietokannan replikointi verkon yli muuttuu haastelliseksi. 
+BASE-oikeellisusmallin avulla pyritään takaamaan hajautetuille järjestelmille mahdollisimman korkea saatavuus ja tehokkuus. BASE-mallin esitti \citeA{vogels2009eventually}, ja se nimi on lyhenne sanoista Basically Available, Soft state ja Eventual Consistency. Vastaavat suomenkieliset termit ovat: periaattessa käytettävissä, ei aina oikeellinen ja lopulta oikeellinen. Periaattessa käytettävissä tarkoittaa, että tiedon halutaan olevan käytettävissä aina vaikkei se olisikaan ajan tasalla. Ei aina oikeellinen tarkoittaa, että haettu tieto ei ole välttämättä oikea johtuen eri solmujen eri tiloista. Lopulta oikeellinen tarkoittaa, että vaikka tiedot eivät ole joka hetki eheitä, järjestelmä pitää huolen, että ne tulevat eheiksi jollakin aikavälillä. Se minkä ajan kulutta näin tapahtuu, riippuu järjestelmän muista ominaisuuksista kuten senhetkisen kuorman määrästä. \cite[s.11]{celko2013joe}
 
-Saatavuutta ja osittamisen
 
-\subsection{BASE}
-
-CAP-teoreeman mukaiset hajautetut järjestelmät eivät voi enää toteuttaa kaikkia ACID-ominaisuuksia. On mahdollista kuitenkin tehdä järjestelmä, jossa transaktioiden reliabiliteetti tuotetaan jonkin ajan kuluttua, ei välittömästi. \citeA{vogels2009eventually} esitteli lopulta oikeellisen (engl. eventual consistency) oikeellisuusmallin, jonka avulla \citeA{pritchett2008base} johti BASE-oikeellisuusmallin. BASE (engl. Basically Available, Soft state, Eventual consistency) on lyhennelmä suomen kielen sanoista: periaatteessa saatavilla, pehmeä tila ja lopulta oikea. Toisin sanottuna BASE on oikeellisuusmalli transaktioille, joka ei takaa oikeellisuutta heti. Sen sijaan oikeellisuus taataan tietyn ajan kuluttua, missä aika rippuu järjestelmän muista ominaisuuksista tai muuttujista, kuten senhetkisen kuorman määrästä. 
-
-BASE-ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä saattaa palauttaa vanhentuneen arvon, jonka tulisi jo olla päivittynyt. Esimerkiksi sosiaalisen median data ei tarvitse olla reaaliaikaisesti saatavilla, vaan riittää että tieto leviää servereiden välillä kohtuullisen ajan kuluessa. Tietokantaa suuniteltaessa ACID -ominaisuuksien sijasta BASE  -oikeellisuusmallin valitseminen antaa mahdollisuuden kehittää erittäin tehokkaita tietokantajärjestelmiä, koska tiedon oikeellisuudesta ei tarvitse varmistua välittömästi \cite{Bailis:2013:ECT:2460276.2462076}.
+BASE-ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä saattaa palauttaa vanhentuneen arvon, jonka tulisi jo olla päivittynyt. Tämä ei aina ole kuitenkaan ongelmallista. Esimerkiksi sosiaalisen median datan ei tarvitse olla reaaliaikaisesti saatavilla, vaan riittää että tieto leviää palvelimien välillä kohtuullisen ajan kuluessa. Tietokantaa suuniteltaessa ACID -ominaisuuksien sijasta BASE  -oikeellisuusmallin valitseminen antaa mahdollisuuden kehittää erittäin tehokkaita tietokantajärjestelmiä, koska tiedon oikeellisuudesta ei tarvitse varmistua välittömästi \cite{Bailis:2013:ECT:2460276.2462076}.
 
 \jyusection{NoSQL}
 
