@@ -360,42 +360,38 @@ BASE-oikeellisusmallin avulla pyritään takaamaan hajautetuille järjestelmille
 
 BASE-ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä saattaa palauttaa vanhentuneen arvon, jonka tulisi jo olla päivittynyt. Tämä ei aina ole kuitenkaan ongelmallista. Esimerkiksi sosiaalisen median datan ei tarvitse olla reaaliaikaisesti saatavilla, vaan riittää että tieto leviää palvelimien välillä kohtuullisen ajan kuluessa. Tietokantaa suuniteltaessa ACID -ominaisuuksien sijasta BASE  -oikeellisuusmallin valitseminen antaa mahdollisuuden kehittää erittäin tehokkaita tietokantajärjestelmiä, koska tiedon oikeellisuudesta ei tarvitse varmistua välittömästi \cite{Bailis:2013:ECT:2460276.2462076}.
 
-\jyusection{NoSQL}
+\jyusection{NoSQL-tietokannat}
 
-Tässä luvussa esitellään NoSQL-tieto\-kannat, jotka pyrkivät ratkaisemaan jatkuvasti kasvavan tiedon määrän luomat haasteet. Eri No\-SQL-tietokannat eroavat huomattavasti toisistaan, näillä tietokannoilla katsotaan olevan ominaispiirteitä, joiden katsotaan määrittelevän No\-SQL-tietokantoja. 
-
-Aluksi esitellään NoSQL:n määritelmä, jonka jälkeen luokitellaan ne neljään eri kategoriaan ja tutkitaan niiden käyttötarkoituksia erityisesti suhteessa tiedon valtavaan massaan. 
+Tässä luvussa esitellän NoSQL-tietokantoja, jotka pyrkivät ratkaisemaan jatkuvasti kasvavan tiedon määrän luomat haasteet. Aluksi määritellään NoSQL-käsite. Toiseksi esitellään NoSQL-tietokantojen keskeisiä ominaisuuksia. Kolmanneksi kerrotaan NoSQL-tietokantoja kohtaan esitetystä kritiikistä.
 
 \subsection{Määritelmä}
 
-NoSQL-käsitettä käytettiin ensimmäistä kertaa vuonna 1998, kun \citeA{nosql1998} julkaisi relationaalisen tietokannanhallintajärjestelmän, joka ei käyttänyt SQL-kieltä tiedon tallennukseen tai hakemiseen. Suurempaan tietoisuuteen NoSQL-tieto\-kannat levisivät kuitenkin vasta 2009 kun Last.fm yhteisöpalvelun kehittäjä Jon Oskarsson kutsui koolle kehittäjiä kuulemaan NoSQL-tietokannoista \cite{nosql2009}. 
+NoSQL-käsitettä käytettiin ensimmäistä kertaa jo vuonna 1998, kun \citeA{nosql1998} julkaisi relationaalisen tietokannanhallintajärjestelmän, joka ei käyttänyt SQL-kieltä tiedon tallennukseen tai hakemiseen. Suurempaan tietoisuuteen NoSQL-tieto\-kannat levisivät kuitenkin vasta 2009 kun Last.fm yhteisöpalvelun kehittäjä Jon Oskarsson kutsui koolle kehittäjiä kuulemaan NoSQL-tietokannoista \cite{nosql2009}. 
 
-Ei-relaatiotietokantoja on ollut olemassa jo 60-luvun lopulta asti, mutta uudemmat NoSQL-nimitystä kantavat tietokannat ovat 2000-luvulla kehitettyjä ei-relaatio\-naalisia tietokantoja \cite{leavitt2010will}. NoSQL-tietkokannat ovat ei-relaationaalisia tietokantoja, joissa ei käytetä SQL-kieltä tiedon tallennukseen tai hakemiseen. Eri tavoilla toimivilla NoSQL-tietokannoilla on yhteisenä tekijänä se, että ne eivät tallenna dataa SQL-kielen avulla. NoSQL (engl. Not only SQL tai Not Relational) nimitys valittiin kuvastamaan tätä kahtiajaottelua SQL- ja NoSQL-tietokantojen välillä. Nimityksen osalta ei olla saavutettu yhtenäistä konsensusta \cite{cattell2011scalable}, mutta NoSQL-tietokantojen ominaisuuksista löytyy useita yhteisiä tekijöitä, jotka esitellään seuraavissa alaluvuissa.  
+Ei-relaatiotietokantoja on ollut olemassa jo 1960-luvun lopulta asti, mutta uudemmat NoSQL-nimitystä kantavat tietokannat ovat 2000-luvulla kehitettyjä ei-relaatio\-naalisia tietokantoja \cite{leavitt2010will}. NoSQL-tietkokannat ovat ei-relaationaalisia tietokantoja, joissa ei käytetä SQL-kieltä tiedon tallennukseen tai hakemiseen. Eri tavoilla toimivilla NoSQL-tietokannoilla on yhteisenä tekijänä se, että ne eivät tallenna dataa SQL-kielen avulla. Kuitenkin poikkeuksia löytyy runsaasti. Joissakin NoSQL-tietokannoissa käytetään joitakin SQL-kielen ominaisuuksia.NoSQL (engl. Not only SQL tai Not Relational) nimitys valittiin kuvastamaan tätä kahtiajaottelua SQL- ja NoSQL-tietokantojen välillä. Nimityksen osalta ei ole olemassa täydellistä konsensusta \cite{cattell2011scalable}, mutta NoSQL-tietokantojen ominaisuuksista löytyy useita yhteisiä tekijöitä, jotka esitellään seuraavaksi.
 
 \subsection{Skaalautuvuus}
-Yksi tärkein NoSQL-tietokantojen ominaisuus on skaalautuvuus. Sillä tarkoitetaan mahdollisuutta lisätä järjestelmään resursseja, niin että suoritusteho parantuu. Tällä skaalamisella halutaan vastata käsiteltävän tietomäärän kasvamiseen. \cite{tiwari2011professional}
+Yksi tärkeimmistä NoSQL-tietokantojen ominaisuuksista on skaalautuvuus. Sillä tarkoitetaan mahdollisuutta lisätä järjestelmään resursseja niin, että suoritusteho parantuu. Tällä skaalamisella halutaan vastata käsiteltävän tietomäärän kasvamiseen. \cite{tiwari2011professional}
 
-Järjestelmiä voidaan skaalata kahdessa suunnassa: horisontaalisesti ja vertikaalisesti. Vertikaalisesti skaalatessa yksittäisen laitteiston tehokkuutta kasvatetaan. Päivitetään tietokone tai vaihdetaan sen komponentteja tehokkaampiin. Tässä tapauksessa käytetään usein supertietokoneita, jotka ovat erittäin kalliita. Horisontaalisesti skaalatessa hajautetaan laskentateho useiden tietokoneiden välille. Tässä tapauksessa voidaan käyttää halpoja komponentteja, jotka voidaan liittää järjestelmään vaivattomasti. Suoritustehoa on näin helppo lisätä tarpeen vaatiessa, eikä suuria kertainvestointeja tarvitse tehdä.
+Järjestelmiä voidaan skaalata kahdessa suunnassa: horisontaalisesti ja vertikaalisesti. Vertikaalisesti skaalatessa yksittäisen laitteiston (esim. palvelimen) tehokkuutta kasvatetaan. Tämä voi tarkoittaa tietokonetta päivittämällä tai komponenttien vaihtamista. Tässä tapauksessa käytetään usein supertietokoneita, jotka ovat erittäin suuria investointeja. Horisontaalisesti skaalatessa hajautetaan laskentateho useiden tietokoneiden välille. Tässä tapauksessa voidaan käyttää halpoja komponentteja, jotka voidaan liittää järjestelmään vaivattomasti. Suoritustehoa on näin helppo lisätä tarpeen vaatiessa, eikä suuria kertainvestointeja tarvitse tehdä.
 
-SQL-tietokantojen ACID-ominaisuudet vaikeuttavat horisontaalista skaa\-lat\-ta\-vuut\-ta, sillä tiedon eheyden vuoksi on varmistuttava, että eri laitteilla sijaitseva data on luotettavasti tallennettu ja verkon muiden solmujen saatavilla. NoSQL-tietokannat ottavat tässä suhteessa askeleen poispäin tiedon eheyden ja transaktioiden oikeellisuuden takaavista ACID-ominaisuuksista kohti BASE-ominaisuuksia parantaakseen suoritustehoa \cite{tiwari2011professional}.
+SQL-tietokantojen ACID-ominaisuudet vaikeuttavat horisontaalista skaa\-lat\-ta\-vuut\-ta, sillä tiedon eheyden vuoksi on varmistuttava, että eri laitteilla sijaitseva data on luotettavasti tallennettu ja verkon muiden solmujen saatavilla. NoSQL-tietokannat ottavat tässä suhteessa askeleen poispäin tiedon eheyden ja tapahtumine oikeellisuuden takaavista ACID-ominaisuuksista kohti BASE-ominaisuuksia parantaakseen suoritustehoa \cite{tiwari2011professional}.
 
 \subsection{Hajautettavuus}
 
-Valtavan tietomassan on aiheuttanut tarpeen prosessoida dataa tehokkaammin. NoSQL-tieto\-kan\-to\-jen eräs tärkeimmistä ominaisuuksista onkin kyky hajauttaa laskenta useille eri laitteille. Tällöin voidaan hyödyntää rinnakkainlaskentaa suurten datamäärien käsittelyyn. Rinnakkaislaskenta on ideaali tapa hajauttaa laskenta horisontaalisesti skaalatulle järjestelmälle, joka koostuu useasta erillisestä laitteesta. Nämä laitteistot ovat tyypillisesti rakennettu edullisilla kuluttajakomponenteilla. \cite{silberschatz2002database}. 
+Valtavan massadata on aiheuttanut tarpeen prosessoida dataa tehokkaammin. NoSQL-tieto\-kan\-to\-jen eräs tärkeimmistä ominaisuuksista onkin kyky hajauttaa käsittely useille eri laitteille. Tällöin voidaan hyödyntää rinnakkainkäsittelyä suurten datamäärien käsittelyyn. Rinnakkainkäsittely on ideaali tapa hajauttaa käsittely horisontaalisesti skaalatulle järjestelmälle, joka koostuu useasta erillisestä laitteesta. Nämä laitteistot ovat tyypillisesti rakennettu edullisilla kuluttajakomponenteilla. \cite{silberschatz2002database}. 
 
-Pilvilaskentaa voidaan siis hyödyntää käyttäen NoSQL-tietokantoja. Ne ovat luonteeltaan helposti skaalattavissa, joten pilvilaskennan mahdollistama suuri laskentakapasiteetti on relaatiotietokantoihin verrattuna helposti valjastettavissa tehokkaaseen tiedon prosessointiin.
+Myös pilvilaskentaa voidaan siis hyödyntää NoSQL-tietokantojen yhtedessä. Ne ovat helposti skaalattavissa, joten pilvilaskennan mahdollistama suuri laskentakapasiteetti on relaatiotietokantoihin verrattuna helposti valjastettavissa tehokkaaseen tiedon prosessointiin.
 
-Hajautetussa järjestelmässä tieto voidaan replikoida verkon solmujen välillä. Tämän onkin tyypillisesti NoSQL-tietokantojen tapa varmistua tiedon eheydestä, kun taas relaatiotietokannat varmistavat tiedon eheyden vain transaktioiden suhteen, eikä relaatiotietokannoilla ole helppoa tapaa tiedon replikointiin. Tämä johtu siitä, että verkon solmujen välillä ACID-ominaisuuksien takaaminen on vaikea ja kallis operaatio. 
+Hajautetussa järjestelmässä tieto voidaan replikoida verkon solmuihin. Tämän onkin tyypillisesti NoSQL-tietokantojen tapa varmistua tiedon eheydestä, kun taas relaatiotietokannat varmistavat tiedon eheyden vain tapahtumien suhteen, eikä relaatiotietokannoilla ole helppoa tapaa tiedon replikointiin. Tämä johtuu siitä, että verkon solmujen välillä ACID-ominaisuuksien takaaminen on vaikea ja kallis operaatio. 
 
-\subsubsection{MapReduce}
+MapReduce (kuvio 3) on Googlen kehittämä ohjelmointiparadigma, joka mahdollistaa massadatan käsittelyn käyttäen yksinkertaisia tekniikkaa, jonka ansiosta työ on helppo hajauttaa. Näin saavutetaan tehokas tapa prosessoida valtavia määriä dataa. Suuret Internetin toimijat kuten Amazon, Google sekä Facebook ovat rakentaneet omat datan analyysi- ja hakujärjestelmänsä käyttäen MapReduce -ohjelmia laajamittaisesti. \cite{dean2008mapreduce}
 
-MapReduce on Googlen kehittämä ohjelmointiparadigma joka mahdollistaa massiivisen tietomäärän käsittelyn käyttäen yksinkertaisia tekniikkaa, jonka ansiosta työ on helppo hajauttaa rinnakkainlaskettavaksi. Näin saavutetaan tehokas tapa prosessoida valtavia määriä dataa. Suuret Internetin toimijat kuten Amazon, Google sekä Facebook ovat rakentaneet omat datan analyysi- ja hakujärjestelmänsä käyttäen MapReduce -ohjelmia laajamittaisesti. \cite{dean2008mapreduce}
+MapReduce on ohjelma tai algoritmi joka käyttää NoSQL-tietokantoja. Joihinkin tietokantoihin se on sisäänrakennettu, mutta sen ei tarvitse olla osa NoSQL-tietokantaa. MapReduce käyttää hyväkseen NoSQL-tietokannan helppoa hajautettavuutta tiedon prosessoinnissa. Erityisesti isot tietomäärät on tehokasta hajauttaa laskettavaksi MapReducen avulla. {\color{red}viite}
 
-MapReduce onkin siis ohjelma tai algoritmi joka käyttää NoSQL-tietokantoja. Joihinkin tietokantoihin se on sisäänrakennettu, mutta sen ei tarvitse olla osa NoSQL-tietokantaa. MapReduce käyttää NoSQL-tietokannan luontaista ominaisuutta, yksinkertaista ja helppoa hajautettavuutta, hyväkseen tiedon prosessoinnissa. Erityisesti isot tietomäärät on tehokasta hajauttaa laskettavaksi MapReducen avulla. 
+MapReduce on kaksivaiheinen algoritmi. Sen ensimmäinen vaihe on \emph{Map()}- funktio, joka hyväksyy parametrikseen arvoja ja antaa palautusarvona on avain-arvo\-pareja. Nämä toimivat syötteenä \emph{Reduce()} -funktiolle, joka laskee yhteen tai muulla tavalla koostaa aiemmin lasketun arvojen summan.  Funktioiden suoritus voidaan hajauttaa järjestelmän solmuille, jolloin laskenta suoritetaan rinnakkain. Pääsolmu jakaa tehtävän pienempiin osiin ja lähettää tehtävän eteenpäin verkossa. Seuraavat verkon solmut voivat tehdä tämän tehtävän uudestaan, kunnes tehtävä on riittävän pieninä tehtävinä tai verkon kaikki solmut ovat käytössä. Tulokset palautetaan sen lähettäneelle solmulle, joka yhdistää tuloksia ja lähettää sen eteenpäin kunnes kaikki tulokset ovat laskettu. {\color{red}viite}
 
-MapReduce on kaksivaiheinen algoritmi, jonka ensimmäinen vaihe on \emph{map()}- funktio joka hyväksyy parametrikseen arvoja ja sen palautusarvona on avain-arvo\-pareja. Nämä toimivat syötteenä \emph{reduce()} funktiolle joka laskee yhteen aiemmin lasketun arvojen summan.  Funktioiden suoritus voidaan hajauttaa järjestelmän solmuille, jolloin laskenta suoritetaan rinnakkain. Pääsolmu jakaa tehtävän pienempiin osiin ja lähettää tehtävän eteenpäin verkossa. Seuraavat verkon solmut voivat tehdä tämän tehtävän uudestaan, kunnes tehtävä on riittävän pieninä tehtävinä tai verkon kaikki solmut ovat käytössä. Tulokset palautetaan sen lähettäneelle solmulle, joka suorittaa summaten tuloksia ja lähettää sen eteenpäin kunnes kaikki tulokset ovat laskettu.
-
-MapReducea voidaan käyttää esimerkiksi sanojen esiintymiseen dokumenteissa, joka lienee yleisin käyttötapaus Internetin hakukoneiden toimintaan liittyen. Aluksi \emph{map()} -funktio laskee yhteen jokaisessa dokumentissa esiintyvän sanan ja lisää sen tuloksen siihen liittyvään sanaan. Seuraavaksi \emph{reduce()} -funktio summaa sanat ja sen esiintymien summan josta vastaukseksi saadaan kaikkien sanojen esiintymien summat \ref{mapreduce}.
+MapReducea voidaan käyttää esimerkiksi sanojen esiintymisen selvittämiseen dokumenteissa, joka lienee yleisin käyttötapaus internetin hakukoneiden toimintaan liittyen. Aluksi \emph{Map()} -funktio laskee yhteen jokaisessa dokumentissa esiintyvän sanan ja lisää sen tuloksen siihen liittyvään sanaan. Seuraavaksi \emph{Reduce()} -funktio summaa sanat ja sen esiintymien summan, josta vastaukseksi saadaan kaikkien sanojen esiintymien summat. {\color{red} viite} .
 
 
 \begin{figure}[H]
@@ -432,37 +428,32 @@ reduce(String avain, String[] arvot):
 
 
 \subsection{Yksinkertaisuus}
-Yksi merkittävimmistä eroista relaatiotietokantoihin on NoSQL-tietokantojen yksinkertainen käyttö. Yksinkertaisuudella tarkoitetaan tässä tapauksessa monimutkaisen hakukielen ja skeeman puuttumista. Ohjelmistokehitys voidaan aloittaa ilman mittavaa tietokannan määrittelyprosessia, mikä vähentää kehityskustannuksia. Toisaalta ACID-ominaisuuksia haluttaessa joudutaan tekemään enemmän töitä sovelluskerroksella. Monimutkaisten hakujen toteuttaminen ilman SQL-kielen kaltaista, hyväksi havaittua, hakujärjestelmää on erittäin vaikeaa \cite{leavitt2010will}.
+Yksi merkittävimmistä eroista relaatiotietokantoihin on NoSQL-tietokantojen yksinkertainen käyttö. Yksinkertaisuudella tarkoitetaan tässä tapauksessa monimutkaisen hakukielen ja skeeman puuttumista. Ohjelmistokehitys voidaan aloittaa ilman mittavaa tietokannan määrittelyprosessia, mikä vähentää kehityskustannuksia. Toisaalta ACID-ominaisuuksia haluttaessa joudutaan tekemään enemmän töitä sovelluskerroksella. Myös monimutkaisten hakujen toteuttaminen ilman SQL-kielen kaltaista, hyväksi havaittua, hakujärjestelmää on erittäin vaikeaa \cite{leavitt2010will}.
 
 
-\subsection{Rajapinta ja hakukielet}
+\subsection{Rajapinta ja kyselykielet}
 
-Varsin näkyvä ominaisuus NoSQL-tietokannoissa on ohjelmointirajapinta, joka voi olla SQL-tyyppinen kieli, pelkkää HTTP-protokollaa käyttävä rajapinta, suora matalan tason ohjelmointikielen rajapinta tai mikä tahansa kombinaatio edellisistä. SQL-kieltä ei kuitenkaan käytetä kuin muutamissa poikkeuksissa.
+Varsin näkyvä ominaisuus NoSQL-tietokannoissa on ohjelmointirajapinta, joka voi olla SQL-tyyppinen kieli, pelkkää HTTP-protokollaa käyttävä rajapinta, suora matalan tason ohjelmointikielen rajapinta tai mikä tahansa kombinaatio edellisistä. SQL-kieltä ei kuitenkaan käytetä kuin muutamissa poikkeuksissa. {\color{red}}
 
 Useat, mutta eivät kaikki, NoSQL-tietokannat tarjoavat REST-rajapinnan (engl. Representational State Transfer) kommunikointiin, joka on HTTP-protokollaa käyttävä tekniikka tiedon kuljettamiseen Internetissä. REST-rajapinnan avulla päästään eroon laitteisto- ja kieliriippuvaisuuksista. Nämä heterogeeniset asiakasohjelmat kommunikoivat tietokannan kanssa, jolloin HTTP-kutsukuorma voidaan tasata ja tulokset voidaan tallentaa välimuistiin. \cite{hecht2011nosql}  
 
 \subsection{Tehokkuus}
-NoSQL-tietokannat ovat tehokkaampia prosessoimaan dataa kuin relaatiotietokannat. Skeemattomuus antaa mahdollisuuden aloittaa ohjelmistokehitys ilman  tietokannan määrittelyprosessia. Perusoperaatiolla aikaa mitattaessa tyypillinen relaatiotietokanta jää nopeudessa tyypillisen NoSQL-tietokannan varjoon (taulukko \ref{mongonopeus}). Tehokuus saavutetaan siis tilanteissa, missä tietokannan vaatimukset keskittyvät vain-luku tai eniten lukuja -tilanteisiin. 
+NoSQL-tietokannat ovat tehokkaampia prosessoimaan dataa kuin relaatiotietokannat. Skeemattomuus mahdollistaa ohjelmistokehityksen ilman tietokannan määrittelyprosessia. Perusoperaatiolla aikaa mitattaessa tyypillinen relaatiotietokanta jää nopeudessa tyypillisen NoSQL-tietokannan varjoon (taulukko \ref{mongonopeus}). Tehokuus saavutetaan siis tilanteissa, missä tietokannan vaatimukset keskittyvät vain-luku tai eniten lukuja -tilanteisiin. {\color{red} <<mitä edellisellä tarkoitetaan>> <<Selitä enemmän taulukkoa 1. >>}
 
 \begin{table}[h]
-\begin{center}
-\begin{tabular}{lrrll}
+    \begin{center}
+        \begin{tabular}{lrrll}
 
-       & \multicolumn{1}{c}{MySQL} & \multicolumn{1}{c}{MongoDB} \\ \hline
-INSERT & 882078                    & 5781                        \\
-UPDATE & 27782                     & 3                           \\
-DELETE & 38079                     & 1                           \\ \hline
-
-
-\end{tabular}
-\caption[MONGODB JA MYSQL NOPEUS]{Perusoperaatioiden suoritusaika millisekunteina, miljoona operaatiota \cite{boicea2012mongodb}.}
-\label{mongonopeus}
-\end{center}
+               & \multicolumn{1}{c}{MySQL} & \multicolumn{1}{c}{MongoDB} \\ \hline
+        INSERT & 882078                    & 5781                        \\
+        UPDATE & 27782                     & 3                           \\
+        DELETE & 38079                     & 1                           \\ \hline
+        
+        \end{tabular}
+        \caption[MONGODB JA MYSQL NOPEUS]{Perusoperaatioiden suoritusaika millisekunteina, miljoona operaatiota           \cite{boicea2012mongodb}.}
+        \label{mongonopeus}
+    \end{center}
 \end{table}
-
-K
-
-
 
 
 \subsection{Kritiikki}
