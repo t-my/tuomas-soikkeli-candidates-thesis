@@ -160,7 +160,8 @@ Kandidaatintutkielma \hfill \\
 Jyväskylä: Jyväskylän yliopisto, 2014, \pageref{LastPage} s. \hfill \\
 Tietojärjestelmätiede \hfill \\
 Ohjaaja: Leppänen, Mauri \hfill \\ \\
-Tässä tutkielmassa tutkitaan kirjallisuuskatsauksen avulla miten NoSQL-tietokantoja voidaan luokitella ja mitkä ovat niiden käyttökohteet. Toiseksi tutkitaan miten NoSQL-tietokannat ovat kehittyneet ja minkälaisia ominaispiirteiltä niillä on. Samalla tutustutaan miten NoSQ-tietokannat eroavat perinteisistä relaatiotietokannoista ja voidaanko relaatiotietokannat korvata NoSQL-tietokannoilla. Lisäksi tutkitaan NoSQL-tietokantoihin kohdistunutta krittiikiä. Lopuksi tässä tutkielmassa NoSQL-tietokannat luokitellaan neljään ryhmään: avain-arvopari-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Jokaisen tietomallin kohdalla esitellään tarkemmin tietomallin piirteet ja käyttökohteet sekä havainnollistetaan tietomallia esimerkein. \hfill \\ \\
+{\color{red}
+Tässä tutkielmassa tutkitaan kirjallisuuskatsauksen avulla miten NoSQL-tietokantoja voidaan luokitella ja mitkä ovat niiden käyttökohteet. Toiseksi tutkitaan miten NoSQL-tietokannat ovat kehittyneet ja minkälaisia ominaispiirteiltä niillä on. Samalla tutustutaan miten NoSQ-tietokannat eroavat perinteisistä relaatiotietokannoista ja voidaanko relaatiotietokannat korvata NoSQL-tietokannoilla. Lisäksi tutkitaan NoSQL-tietokantoihin kohdistunutta krittiikiä. Lopuksi tässä tutkielmassa NoSQL-tietokannat luokitellaan neljään ryhmään: avain-arvopari-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Jokaisen tietomallin kohdalla esitellään tarkemmin tietomallin piirteet ja käyttökohteet sekä havainnollistetaan tietomallia esimerkein.} \hfill \\ \\
 Asiasanat: NoSQL, tietokanta, ei-relaationaalinen \hfill
 \newpage
 
@@ -176,7 +177,7 @@ Jyväskylä: University of Jyväskylä, 2014, \pageref{LastPage} p. \hfill \\
 Information Systems, Candidates Thesis \hfill \\
 Supervisor(s): Leppänen, Mauri \hfill \\ \\
 
-In this candidate's thesis NoSQL-databases are researched to categorize and identify the most common usecases for them. Secondly the author researches how NoSQL-databases are evolved and what are their main properties. At the same time, NoSQL-databases are compared how they differ from ordinary relational database management systems and are these relational databases replaceable with NoSQL-databases. Moreover we study the critque that the NoSQL faces. Finally, NoSQL-databases are divided into four groups: key-value stores, document stores, column based databases and graph databases. In each data model we study the common properties of particular data model and we explore the use cases for these data models. This is done by providing real-world examples. \hfill \\ \\
+{\color{red}In this candidate's thesis NoSQL-databases are researched to categorize and identify the most common usecases for them. Secondly the author researches how NoSQL-databases are evolved and what are their main properties. At the same time, NoSQL-databases are compared how they differ from ordinary relational database management systems and are these relational databases replaceable with NoSQL-databases. Moreover we study the critque that the NoSQL faces. Finally, NoSQL-databases are divided into four groups: key-value stores, document stores, column based databases and graph databases. In each data model we study the common properties of particular data model and we explore the use cases for these data models. This is done by providing real-world examples. \hfill \\ \\}
 Keywords: NoSQL, database, non-relational \hfill 
 \newpage
 
@@ -212,13 +213,14 @@ Tämä tutkielma on tehty \LaTeX-ladontajärjestelmällä, jota suosittelen läm
 Päädyin käyttämään tekstin ja koodin muokkamiseen web-pohjaista, sekä ilmaista ShareLatex (http://www.sharelatex.com) -palvelua. ShareLatex-editori ja -kääntäjä suoraviivaistaa monia \LaTeX:n monimutkaisuuksia. Lähdekoodi on saatavilla kokonaisuudessaan osoitteesta: https://github.com/t-my/tuomas-soikkeli-candidates-thesis
 
 
+{\color{red}
 \jyusection{JOHDANTO}
 
 Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä operaatioita. Siten datamäärien kasvaessa eksponentiaalisesti on kehitetty ei-relaationaalisia tietokantajärjestelmiä. Näitä järjestelmiä kutsutaan NoSQL -tietokannoiksi. \cite{leavitt2010will, pokorny2013nosql}
 
-2000-luvulta alkaen on kehitetty NoSQL-tietokantoja perinteisten relaatiotietokantojen rinnalle.  {\color{red} tähän lisää historiasta ja vertailusta relaatiotietokantoihin..} 
+2000-luvulta alkaen on kehitetty NoSQL-tietokantoja perinteisten relaatiotietokantojen rinnalle. 
 
-Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Myös muita tietomalleja käyttäviä järjestelmiä on runsaasti, mutta tässä tutkielmassa keskitytään näiden neljän tietomallin tutkimiseen. \cite{cattell2011scalable} {\color{red} lisää tietomalleista..}
+Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Myös muita tietomalleja käyttäviä järjestelmiä on runsaasti, mutta tässä tutkielmassa keskitytään näiden neljän tietomallin tutkimiseen. \cite{cattell2011scalable}
 
 
 NoSQL-tietokantojen nuoren iän myötä NoSQL-tietokannoista ei ole kattavaa tutkimustietoa. Tässä tutkielmassa tutkitaan näitä epäselvyyksiä seuraavien tutkimuskysymysten avulla:
@@ -240,6 +242,7 @@ Tämä tutkielma selvittää kirjallisuuskatsauksen avulla aluksi NoSQL-tieto\-k
 Tämän tutkimuksen avulla lukijaa saa selvän kuvan tietokantojen teoriapohjasta, NoSQL-tietokantojen tyypillisistä käyttökohteista sekä tavanomaisista ominaisuuksista.
 
 Tämä tutkimus jakaantuu kolmeen sisältölukuun. Ensimmäisessä sisältöluvussa tutustutaan NoSQL-tietokantojen kehittymiseen johtaneisiin seikkioihin eli historiaan. Tämän lisäksi ensimmäisessä kappalessa käydään läpi relaatiotietkantojen ja NoSQL-tietokantojen toiminnan teoriaa ja ominaisuuksia. Toisessa kappalessa määritelmän jälkeen käydään läpi NoSQL-tietokantojen keskisimmät ominaisuudet ja yleisimmät määrittelevät tekijät. Toisen kappaleen lopussa käsitellään myös krittiikkiä aiheeseen liittyen.Kolmannessa kappaleessa esitellään aluksi luokittu, jonka jälkeen käydään läpi tietokantasovelluksia tietomalleittain.
+}
 
 \jyusection{NOSQL-TIETOKANTOJEN TAUSTA} 
 
@@ -316,7 +319,7 @@ Tietokantajärjestelmille on muodostunut uusi haaste. Tietoa on yksikertaisesti 
 
 Eric Brewer esitti vuonna 2000 \cite{brewer} kuviossa 2 esitetyn CAP-teoreeman, jota kutsutaan myös Brewerin teoreemaksi. CAP-teoreeman mukaan, on olemassa kolme ominaisuutta, jotka vaikuttavat hajautetun järjestelmän suunnittelun, toteutukseen ja käyttöönottoon. Nämä ominaisuudet ovat eheys, saatavuus ja pirstoutumisen sietokyky eli CAP (engl. consistency, availability, partition tolerance). 
 
-Eheys (consistency tarkoittaa, että tietokannan tosinteiden (replicates) tulee olla eheitä, jolloin hajautetun järjestelmän solmut näkevät kunkin tiedon samanlaisena. Saatavuus (availability) tarkoittaa, että palvelu (tietyn tiedon lukeminen tai kirjoittaminen) on saatavissa silloin, kun sitä tarvitaan. Pirstoutumisen sietokyky (partition tolerance) tarkoittaa, että verkon pirstoutuessa tiedonkäsittelyn tulee jatkua edelleen solmuissa \cite[s. 10]{celko2013joe}.
+Eheys (consistency) tarkoittaa, että tietokannan tosinteiden (replicates) tulee olla eheitä, jolloin hajautetun järjestelmän solmut näkevät kunkin tiedon samanlaisena. Saatavuus (availability) tarkoittaa, että palvelu (tietyn tiedon lukeminen tai kirjoittaminen) on saatavissa silloin, kun sitä tarvitaan. Pirstoutumisen sietokyky (partition tolerance) tarkoittaa, että verkon pirstoutuessa tiedonkäsittelyn tulee jatkua edelleen solmuissa \cite[s. 10]{celko2013joe}.
 
 % CAP-theorem
 \begin{figure}[H]
@@ -353,7 +356,7 @@ Eheys (consistency tarkoittaa, että tietokannan tosinteiden (replicates) tulee 
 
 Tietokannan valinnassa tulee ottaa huomioon CAP-teoreemassa esitellyt kolme ominaisuutta. Yhdestä niistä on luovuttava. Saatavuuden ja eheyden omaavat tietokannat (C) ovat usein perinteisiä relaatiotietokantoja. Data on aina saatavilla ja tiedon eheys taataan erilaisten tekniikoiden, kuten viite-eheyden avulla. Näillä tietokannoilla on kuitenkin hankaluuksia verkon pirstaloituessa. Eheyttä ja pirstoutumisen sietokykyä tarjoavat (A) tietokannat puolestaan eivät voi taata tiedon saatavuutta. Saatavuutta ja pirstoutumisen sietokyvykä tarjoavat tietokannat (B) saavuttavat lopulta oikeellisen tiedon. \cite{hurst2010visual}
 
-BASE-oikeellisusmallin avulla pyritään takaamaan hajautetuille järjestelmille mahdollisimman korkea saatavuus ja tehokkuus. BASE-mallin esitti \citeA{vogels2009eventually}, ja se nimi on lyhenne sanoista Basically Available, Soft state ja Eventual Consistency. Vastaavat suomenkieliset termit ovat: periaattessa käytettävissä, ei aina oikeellinen ja lopulta oikeellinen. Periaattessa käytettävissä tarkoittaa, että tiedon halutaan olevan käytettävissä aina vaikkei se olisikaan ajan tasalla. Ei aina oikeellinen tarkoittaa, että haettu tieto ei ole välttämättä oikea johtuen eri solmujen eri tiloista. Lopulta oikeellinen tarkoittaa, että vaikka tiedot eivät ole joka hetki eheitä, järjestelmä pitää huolen, että ne tulevat eheiksi jollakin aikavälillä. Se minkä ajan kulutta näin tapahtuu, riippuu järjestelmän muista ominaisuuksista kuten senhetkisen kuorman määrästä. \cite[s.11]{celko2013joe}
+BASE-oikeellisusmallin avulla pyritään takaamaan hajautetuille jär\-jes\-tel\-mil\-le\linebreak mahdollisimman korkea saatavuus ja tehokkuus. BASE-mallin esitti \citeA{vogels2009eventually}, ja se nimi on lyhenne sanoista Basically Available, Soft state ja Eventual Consistency. Vastaavat suomenkieliset termit ovat: periaattessa käytettävissä, ei aina oikeellinen ja lopulta oikeellinen. Periaattessa käytettävissä tarkoittaa, että tiedon halutaan olevan käytettävissä aina vaikkei se olisikaan ajan tasalla. Ei aina oikeellinen tarkoittaa, että haettu tieto ei ole välttämättä oikea johtuen eri solmujen eri tiloista. Lopulta oikeellinen tarkoittaa, että vaikka tiedot eivät ole joka hetki eheitä, järjestelmä pitää huolen, että ne tulevat eheiksi jollakin aikavälillä. Se minkä ajan kulutta näin tapahtuu, riippuu järjestelmän muista ominaisuuksista kuten senhetkisen kuorman määrästä. \cite[s.11]{celko2013joe}
 
 
 BASE-ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä saattaa palauttaa vanhentuneen arvon, jonka tulisi jo olla päivittynyt. Tämä ei aina ole kuitenkaan ongelmallista. Esimerkiksi sosiaalisen median datan ei tarvitse olla reaaliaikaisesti saatavilla, vaan riittää että tieto leviää palvelimien välillä kohtuullisen ajan kuluessa. Tietokantaa suuniteltaessa ACID -ominaisuuksien sijasta BASE  -oikeellisuusmallin valitseminen antaa mahdollisuuden kehittää erittäin tehokkaita tietokantajärjestelmiä, koska tiedon oikeellisuudesta ei tarvitse varmistua välittömästi \cite{Bailis:2013:ECT:2460276.2462076}.
@@ -366,7 +369,7 @@ Tässä luvussa esitellän NoSQL-tietokantoja, jotka pyrkivät ratkaisemaan jatk
 
 NoSQL-käsitettä käytettiin ensimmäistä kertaa jo vuonna 1998, kun \citeA{nosql1998} julkaisi relationaalisen tietokannanhallintajärjestelmän, joka ei käyttänyt SQL-kieltä tiedon tallennukseen tai hakemiseen. Suurempaan tietoisuuteen NoSQL-tieto\-kannat levisivät kuitenkin vasta 2009 kun Last.fm yhteisöpalvelun kehittäjä Jon Oskarsson kutsui koolle kehittäjiä kuulemaan NoSQL-tietokannoista \cite{nosql2009}. 
 
-Ei-relaatiotietokantoja on ollut olemassa jo 1960-luvun lopulta asti, mutta uudemmat NoSQL-nimitystä kantavat tietokannat ovat 2000-luvulla kehitettyjä ei-relaatio\-naalisia tietokantoja \cite{leavitt2010will}. NoSQL-tietkokannat ovat ei-relaationaalisia tietokantoja, joissa ei käytetä SQL-kieltä tiedon tallennukseen tai hakemiseen. Eri tavoilla toimivilla NoSQL-tietokannoilla on yhteisenä tekijänä se, että ne eivät tallenna dataa SQL-kielen avulla. Kuitenkin poikkeuksia löytyy runsaasti. Joissakin NoSQL-tietokannoissa käytetään joitakin SQL-kielen ominaisuuksia.NoSQL (engl. Not only SQL tai Not Relational) nimitys valittiin kuvastamaan tätä kahtiajaottelua SQL- ja NoSQL-tietokantojen välillä. Nimityksen osalta ei ole olemassa täydellistä konsensusta \cite{cattell2011scalable}, mutta NoSQL-tietokantojen ominaisuuksista löytyy useita yhteisiä tekijöitä, jotka esitellään seuraavaksi.
+Ei-relaatiotietokantoja on ollut olemassa jo 1960-luvun lopulta asti, mutta uudemmat NoSQL-nimitystä kantavat tietokannat ovat 2000-luvulla kehitettyjä ei-re\-laa\-tio\-naa\-li\-si\-a tietokantoja \cite{leavitt2010will}. NoSQL-tietkokannat ovat ei-re\-laa\-tio\-naa\-lis\-ia tietokantoja, joissa ei käytetä SQL-kieltä tiedon tallennukseen tai hakemiseen. Eri tavoilla toimivilla NoSQL-tietokannoilla on yhteisenä tekijänä se, että ne eivät tallenna dataa SQL-kielen avulla. Kuitenkin poikkeuksia löytyy runsaasti. Joissakin NoSQL-tietokannoissa käytetään joitakin SQL-kielen ominaisuuksia.NoSQL (engl. Not only SQL tai Not Relational) nimitys valittiin kuvastamaan tätä kahtiajaottelua SQL- ja NoSQL-tietokantojen välillä. Nimityksen osalta ei ole olemassa täydellistä konsensusta \cite{cattell2011scalable}, mutta NoSQL-tietokantojen ominaisuuksista löytyy useita yhteisiä tekijöitä, jotka esitellään seuraavaksi.
 
 \subsection{Skaalautuvuus}
 Yksi tärkeimmistä NoSQL-tietokantojen ominaisuuksista on skaalautuvuus. Sillä tarkoitetaan mahdollisuutta lisätä järjestelmään resursseja niin, että suoritusteho parantuu. Tällä skaalamisella halutaan vastata käsiteltävän tietomäärän kasvamiseen. \cite{tiwari2011professional}
@@ -377,7 +380,7 @@ SQL-tietokantojen ACID-ominaisuudet vaikeuttavat horisontaalista skaa\-lat\-ta\-
 
 \subsection{Hajautettavuus}
 
-Valtavan massadata on aiheuttanut tarpeen prosessoida dataa tehokkaammin. NoSQL-tieto\-kan\-to\-jen eräs tärkeimmistä ominaisuuksista onkin kyky hajauttaa käsittely useille eri laitteille. Tällöin voidaan hyödyntää rinnakkainkäsittelyä suurten datamäärien käsittelyyn. Rinnakkainkäsittely on ideaali tapa hajauttaa käsittely horisontaalisesti skaalatulle järjestelmälle, joka koostuu useasta erillisestä laitteesta. Nämä laitteistot ovat tyypillisesti rakennettu edullisilla kuluttajakomponenteilla. \cite{silberschatz2002database}. 
+Valtavan massadata on aiheuttanut tarpeen prosessoida dataa tehokkaammin.\linebreak NoSQL-tieto\-kan\-to\-jen eräs tärkeimmistä ominaisuuksista onkin kyky hajauttaa käsittely useille eri laitteille. Tällöin voidaan hyödyntää rinnakkainkäsittelyä suurten datamäärien käsittelyyn. Rinnakkainkäsittely on ideaali tapa hajauttaa käsittely horisontaalisesti skaalatulle järjestelmälle, joka koostuu useasta erillisestä laitteesta. Nämä laitteistot ovat tyypillisesti rakennettu edullisilla kuluttajakomponenteilla. \cite{silberschatz2002database}. 
 
 Myös pilvilaskentaa voidaan siis hyödyntää NoSQL-tietokantojen yhtedessä. Ne ovat helposti skaalattavissa, joten pilvilaskennan mahdollistama suuri laskentakapasiteetti on relaatiotietokantoihin verrattuna helposti valjastettavissa tehokkaaseen tiedon prosessointiin.
 
@@ -435,7 +438,7 @@ Varsin näkyvä ominaisuus NoSQL-tietokannoissa on ohjelmointirajapinta, joka vo
 
 Useat, mutta eivät kaikki, NoSQL-tietokannat tarjoavat REST-rajapinnan (engl. Representational State Transfer) kommunikointiin, joka on HTTP-protokollaa käyttävä tekniikka tiedon kuljettamiseen Internetissä. REST-rajapinnan avulla päästään eroon laitteisto- ja kieliriippuvaisuuksista. Nämä heterogeeniset asiakasohjelmat kommunikoivat tietokannan kanssa, jolloin HTTP-kutsukuorma voidaan tasata ja tulokset voidaan tallentaa välimuistiin. \cite{hecht2011nosql}  
 
-\subsection{Tehokkuus}
+\subsection{Tehokkuus {\color{red} ehkä tämä pois kokonaan? vähän turha}}
 NoSQL-tietokannat ovat tehokkaampia prosessoimaan dataa kuin relaatiotietokannat. Skeemattomuus mahdollistaa ohjelmistokehityksen ilman tietokannan määrittelyprosessia. Perusoperaatiolla aikaa mitattaessa tyypillinen relaatiotietokanta jää nopeudessa tyypillisen NoSQL-tietokannan varjoon (taulukko \ref{mongonopeus}). Tehokuus saavutetaan tilanteissa, missä tietokannan vaatimukset keskittyvät tilanteisiin, jossa lukuoperaatioita tehdään suuri määrä suhteessa kirjoitusoperaatioihin. {\color{red} <<Selitä enemmän taulukkoa 1. >>}
 
 \begin{table}[h]
@@ -511,9 +514,9 @@ Voidaankin esittää kysymys ovatko NoSQL-tietokannat vain kehittymättömiä ti
 Myös NoSQL nimitys saa kritiikkiä. Stonebrakerin \citeyear{stonebraker2010sql} mukaan NoSQL-tie\-to\-kan\-to\-jen nopeudella ei ole mitään merkitystä sen kanssa, että ne eivät käytä SQL-kieltä. Hänen mukaansa helposti replikoitavia relaatiotietokantajärjestelmiä, tietyillä ominaisuuksilla, tiettyyn käyttöön, on olemassa ja ne kehittyvät jatkuvasti nopeudessa. 
 
 
-\jyusection{LUOKITTELU JA KÄYTTÖKOHTEET}
+\jyusection{NOSQL-TIETOKANTOJEN LUOKITTELU JA ESIMERKKEJÄ}
 
-Tässä luvussa kuvataan NoSQL-tietokantoja. Aluksi esitellään yksinkertainen tietomallin mukainen luokittelu NoSQL-tietokannoille. Toiseksi käsitellään kutakin luokkaa hieman tarkemmin ja kuvataan kustakin luokasta yksi esimerkki.
+Tässä luvussa kuvataan NoSQL-tietokantoja. Aluksi esitellään yksinkertainen tietomallin mukainen luokittelu. Toiseksi käsitellään kutakin luokkaa hieman tarkemmin ja kuvataan kustakin luokasta 1-2 esimerkki.
 
 \subsection{Luokittelu}
 
@@ -558,7 +561,7 @@ Seuraavaksi esitellään luokitellut tietomallit omassa alaluvuissaan ja jokaise
 
 \subsection{Avain-arvo-varasto}
 
-Yksinkertaisin NoSQL-tietomalli käyttää tiedon tallentamiseen avain-arvo-pareja (kvuio \ref{avainarvopari}). Kaikki data tallennetaan avaimen avulla, joka toimii samalla yksinkertaisena  osoittimena (engl. index). Yksinkertaiset avain-arvo-parit voidaan esittää esimerkiksi JSON-notaation (engl. JavaScript Object Notation) avulla. Samalla osoittimella tehty haku palauttaa siihen liittyvän datan. \cite{cattell2011scalable,seeger2009key}
+Yksinkertaisin NoSQL-tietomalli käyttää tiedon tallentamiseen avain-arvo-pareja (kuvio \ref{avainarvopari}). Kaikki data tallennetaan ja haetaan avaimen avulla. Yksinkertaiset avain-arvo-parit voidaan esittää esimerkiksi JSON-notaation (engl. JavaScript Object Notation) avulla. Samalla osoittimella tehty haku palauttaa aina siihen liittyvän datan. \cite{cattell2011scalable,seeger2009key}
 
 \begin{figure}[H]
 \begin{center}
@@ -576,7 +579,7 @@ Yksinkertaisin NoSQL-tietomalli käyttää tiedon tallentamiseen avain-arvo-pare
 \end{center}
 \end{figure}
 
-Avain-arvo-varastojen käyttäminen on yleensä hyvin yksinkertaista (kuva \ref{pseudokeyvalue}), sillä erillistä hakukieltä, kuten SQL-kieltä ei käytetä. Hakuja voidaan tehdä vain avaimen avulla (joissakin tapauksissa arvo voi olla numeerinen arvo, jonka perusteella voidaan tehdä hakuja). Koska arvoja vasten ei voida tehdä hakuja, tietomallilla ei ole tiedossa olevaa rakennetta. Näin saavutetaan erittäin tehokkaat perusoperaatiot \emph{put()} ja \emph{get()}. 
+Avain-arvo-varastojen käyttäminen on yleensä hyvin yksinkertaista (kuvio \ref{pseudokeyvalue}), sillä erillistä hakukieltä, kuten SQL-kieltä ei käytetä. Hakuja voidaan tehdä vain avaimen avulla. Joissakin tapauksissa arvo voi olla numeerinen, jonka perusteella hakuja tehdään. Koska arvoihin perustuen ei voida tehdä hakuja, tietomallilla ei ole tiedossa olevaa rakennetta. Näin saavutetaan erittäin tehokkaat perusoperaatiot \emph{put()} ja \emph{get()}. 
 
 \begin{figure}[H]
 \begin{center}
@@ -607,17 +610,13 @@ tulosta(etunimi + " " + sukunimi + " " + email);
 \end{center}
 \end{figure}
 
-\subsubsection{Dynamo}
+\noindent Kuviossa \ref{pseudokeyvalue} tehdään aluksi kolme kirjoitus, eli put() operaatiota. Ensimmäinen parameteri on avain ja toinen arvo. Seuraavaksi sama tieto haetaan get() operaatiolla, jolloin funktiolle annetaan parametrinä avain. Lopuksi tulostetaan muuttujien avulla merkkijono. 
 
-Dynamo on Amazonin suunnittelama ja toteuttava avain-arvo-varasto. Amazon kehitti dynamoa omiin tarpeisiinsa ja lopulta siitä julkaistiin artikkeli "Dynamo: Amazon's Highly Available Key-value Store" \cite{decandia2007dynamo}, joka onkin pohjana useille uusille NoSQL-tietokannoille. 
-
-Dynamolla on tähtitieteelliset vaatimukset. Esimerkiksi Amazonin verkkokaupassa oleva ostoskärry -palvelu käsittelee yli kolme miljoonaa ostosta päivässä ja yhtäaikaisia asiakkaita tai tiloja on käytössä satoja tuhansia. 
-
-Lopputuloksena on erittäin tehokas, saatavilla oleva, järjstelmän kaatumisesta selviävä, skaalattava datavarasto, joka onnistuneesti täyttää halutut vaatimukset. 
+Dynamo on Amazonin suunnittelema ja toteuttama avain-arvo-varastoon perustuva tietokanta. Amazon kehitti Dynamoa omiin tarpeisiinsa ja lopulta siitä julkaistiin artikkeli Dynamo: Amazon's Highly Available Key-value Store \cite{decandia2007dynamo}. Dynamo on ollut pohjana useille uusille NoSQL-tietokannoille. Dynamolla voidaan sanoa olevan "tähtitieteelliset" vaatimukset. Esimerkiksi Amazonin verkkokaupassa oleva ostoskärry -palvelu käsittelee yli kolme miljoonaa ostosta päivässä ja yhtäaikaisia asiakkaita tai tiloja on käytössä satoja tuhansia. Lopputuloksena on erittäin tehokas, saatavilla oleva, järjestelmän kaatumisesta selviävä, skaalattava tietokanta, joka täyttää halutut vaatimukset. 
 
 \subsection{Dokumenttivarasto}
 
-Dokumenttitietokannat tallentavat datan dokumentteihin, jotka on järjestetty avain-arvopari-varaston tapaan osoittimen avulla. Dokumenttitietokannat ovat kuten avain-arvo-varastoja, mutta arvona voidaan tallentaa toisisijaisia osoittimia, listoja tai muita monimutkaisempia tietorakenteita. Toisinsanoen tämä tarkoittaa, että dokumenttivarastot voivat tallentaa vapaamuotoista, ei-relaationaalista dataa, dokumentteja (kuva \ref{json}). Dokumenttivarastot eivät keskity korkeisiin luku- ja kirjoitusnopeuksiin vaan tarjoavat kattavan tavan tallentaa tiedon valtavaa massaa, ilman ennaltamääriteltyä rakennetta eli skeemaa. Hakuominaisuudet ovat usein monipuoliset, koska avain-arvo-varastoista eroten, dataa voidaan hakea myös avaimen lisäksi arvoista.  
+Dokumenttivaraston mukaiseen tietomalliin perustuvat tietokannat tallentavat datan dokumentteihin, jotka on järjestetty avain-arvopari-varaston tapaan osoittimen avulla. Dokumenttitietokannat ovat kuten avain-arvo-varastoja, mutta arvona voidaan tallentaa toissijaisia osoittimia, listoja tai muita monimutkaisempia tietorakenteita. Toisin sanoen dokumenttivarastot voivat tallentaa vapaamuotoista, ei-re\-laa\-tio\-naa\-lis\-ta dataa, dokumentteja (kuvio \ref{json}). Dokumenttivarastot eivät keskity korkeisiin luku- ja kirjoitusnopeuksiin vaan tarjoavat kattavan tavan tallentaa tiedon valtavaa massaa, ilman ennaltamääriteltyä rakennetta eli skeemaa. Hakuominaisuudet ovat usein monipuoliset, koska toisin kuin avain-arvo-varastoissa, dataa voidaan hakea avaimen lisäksi arvojen perusteella.  
 
 \begin{figure}[H]
 \begin{center}
@@ -655,67 +654,66 @@ Dokumenttitietokannat tallentavat datan dokumentteihin, jotka on järjestetty av
 \end{center}
 \end{figure}
 
-Dokumenttivarastojen kannattajat väittävät, että tieto on semanttisesti hyvin samankaltaista, mutta syntaksi voi olla hyvin erilaista. Esimerkkinä reaalimaailman dokumentista on käyntikortti. Toisella on käyntikortissaa faksi, mutta se ei tarkoita että kaikkien käyntikorttien omistajien tulisi kirjoittaa käyntikorttiinsa: "Faksi : ei". Tätä dokumenttiparadigmaa käyttäen Internetissä liikkuva tieto on kokonaisia, reaalimaailmaan liittyviä dokumentteja, ei niinkään relaatioita, tauluja tai rivejä. 
+\noindent Kuviossa \ref{json} on esimerkki dokumentista, joka on esitetty JSON-formaatissa. Dokumentti on esitys blogimerkinnästä, joka koostuu yksinkertaisista avain-arvo-pareista, taulukoista (array) ja hakurakenteista (map). Eri tietotyyppien arvona voi olla lisää tietotyyppejä. Dokumentin rakennetta ei ole rajattu eksplisiittisesti skeeman avulla, vaan rakenne on avoin. Rakennetta voidaan muokata myös ajon aikana. Usein kuitenkin dokumentin rakenne määritellään sovelluskerroksella. Dokumenttiin liittyvä tieto kirjoitetaan suoraan dokumenttiin, eikä esimerkiksi toiseen dokumenttiin osittimen avulla.
 
-Dokumenttivarastot ovat siis yleiskäyttöisiä tietovarastoja. Ne ovat jokseenkin tehokkaita, mutta niillä on myös piirteitä relaatiotietokannan ominaisuuksista. Dokumenttivarastoilla voi olla esimerkiksi monipuolinen hakukieli, jopa SQL-kieltä on käytetty.
+Dokumenttivarastojen kannattajat väittävät, että tieto on semanttisesti hyvin samankaltaista, mutta syntaksi voi olla hyvin erilaista. Esimerkkinä reaalimaailman dokumentista on käyntikortti. Toisella on käyntikortissaan faksi, mutta se ei tarkoita että kaikkien käyntikorttien omistajien tulisi kirjoittaa käyntikorttiinsa: "Faksi : ei". Tätä dokumenttiparadigmaa käyttäen internetissä liikkuva tieto on kokonaisia, reaalimaailmaan liittyviä dokumentteja, ei niinkään relaatioita, tauluja tai rivejä. 
 
-Seuraavaksi esitellään kaksi esimerkkiä dokumenttivarastoista: MongoDB ja CouchDB. Niistä esitellään perusominaisuudet ja tärkeimmät käyttökohteet.
+Dokumenttivarastot ovat siis yleiskäyttöisiä tietovarastoja. Ne ovat jokseenkin tehokkaita, mutta niillä on myös piirteitä relaatiotietokannan ominaisuuksista. Dokumenttivarastoilla voi olla esimerkiksi monipuolinen kyselykieli, jopa SQL-kieltä on käytetty. {\color{red} viite}
+
+Seuraavaksi esitellään kaksi esimerkkiä dokumenttivarastoista: MongoDB ja CouchDB. Niistä esitellään perusominaisuudet ja tärkeimmät käyttökohteet. 
+
+MongoDB on vuonna 2009 julkaistu dokumenttivarasto ja sitä pidetäänkin yhtenä tärkeimpänä NoSQL-liikkeen puolestapuhujana. MongoDB-tietokanta tallentaa tietoa skeemavapaassa, ei-relaationaalisessa muodossa käyttäen JSON-formaattia. MongoDB on laajasti käytössä internetin suurilla toimijoilla, joista esimerkkeinä ovat MTV, Disqus, Craiglist, Disney , Sourceforge, The Guardian, Forbes, The New York Times, bit.ly, GitHub ja FourSquare \cite{boicea2012mongodb}.
+
+MongoDB:n tärkeimmät ominaisuudet ovat tehokkuus, korkea saatavuus ja automaattinen skaalautuvuus. MongoDB käyttää tapahtumien prosessointiin  BASE-ominaisuuksia, jolloin se pystyy tarjoamaan nopeampaa tiedonkäsittelyä verrattuna relaatiotietokantoihin. Hakurajapintana toimii suora ohjelmointikielen API, REST-rajapinta sekä JavaScript-komentokehote.
+
+MongoDB:n katsotaan soveltuvan tietokannaksi järjestelmiin, jossa tietoa on erittäin paljon, mutta tiedon skeema vaihtelee. MongoDB:ä suositellaan käytettäväksi operationaalisen älykkyyden hallintaan. Se tarkoittaa tiedon koostamista suurista tietovirroista reaaliaikaisesti. Tietovirroista koostetaan näkymiä, jotka antavat yritykselle tietoa päätöksenteon tueksi. Reaaliaikaista dataa koostetaan näkyväksi tiedoksi käyttämällä MapReduce:ia. Toisaalta MongoDB:n sopii myös tavanomaisen verkkokaupan tuotekatalogin tietovarastona, sillä sen joustava tietomalli antaa mahdollisuuden käyttää sitä myös perinteisissä käyttökohteissa, missä tyypillisesti käytetään relaatiotietokantaa \cite{mongodb}. 
+
+CouchDB on dokumenttivarasto, joka tallettaa datan puolirakenteelliseen muotoon, dokumentiksi. CouchDB on toteutettu funktionaalisella Erlang -ohjelmointikielellä, joka keskittyy rinnakkaisuuteen. Sen avulla CouchDB lupaa täyttää ACID-ominaisuudet \cite{couchdb}, mitä pidetään CouchDB:n ertyisominaisuutena. Vaikkakin ACID-ominaisuudet täyttyvät vain yhden dokumentin kontekstissa. {\color{red} viite}
+
+\subsection{Sarakevarastot}
+
+Sarakepohjaiset tietokannat tallentavat dataa relaatiomallin tavalla tauluihin, mutta sarakepohjaisesti. Relaatiomallissa data tallennetaan rivien mukaan. Sarakepohjaisesti dataa tallennettaessa parannetaan tehokkuutta, joka on tärkeää tietovarastoinnissa, CRM-järjestelmissä (egl. customer relationships maangement), ja metatiedon tallentamisessa (esimerkiksi kirjastokorttien katalogit). \cite{stonebraker2005c}
+
+Sarakepohjaisessa tietokannassa samaan sarakkeeseen kuuluva data tallennetaan samaan sarakkeeseen. Näin sarakemallia käyttävä tietokanta on luontaisesti valmiina tarjoamaan tietoa. Esimerkiksi kuviossa \ref{sarakemalli} olevasta skeemasta pystytään hakemaan dataa niin, että tiedetään, montako asiakasta asuu tietyssä kaupungissa tai tietyn postinumeron alueella. Hakuoperaatio on tehokas verrattuna relaatiotietokantoihin, jossa koko taulun data tulee käydä läpi. Tämä antaa käytännöllisiä työkaluja suurten tietomäärien analyysiin. Tämän analyysin avulla voidaan jalostaa liiketoiminnalle hyödyllistä tietoa tai tieteellisessä tilastoinnissa. \cite{stonebraker2005c}
 
 
-\subsubsection{MongoDB}
+\begin{figure}[h]
 
-MongoDB on 2009 julkaistu dokumenttivarasto ja sitä pidetäänkin yhtenä tärkeimpänä NoSQL-liikkeen puolestapuhujana. MongoDB:n tallentaa tietoa skeemavapaassa, ei-relaationaalisessa muodossa käyttän JSON-formaattia. MongoDB on laajasti käytössä internetin suurilla toimijoilla kuten MTV, Disqus, Craiglist, Disney , Sourceforge, The Guardian, Forbes, The New York Times, bit.ly, GitHub, FourSquare ja niin edelleen \cite{boicea2012mongodb}.
-
-MongoDB:n tärkeimmät ominaisuudet ovat tehokkuus, korkea saatavuus ja automaattinen skaalautuvuus.  MongoDB käyttää transaktoiden prosessointiin  BASE-ominaisuuksia, jolloin se pystyykin tarjoamaan nopeampaa tiedon käsittelyä verrattuna relaatiotietokantoihin. Hakurajapintana toimii suora ohjelmointikielen API, REST-rajapinta, sekä JavaScript-komentokehote.
-
-MongoDB:n katsotaan soveltuvan tietokannaksi järjestelmiin, missä tietoa on erittäin paljon, mutta tiedon skeema vaihtelee. MongoDB:ä suositellaan kätettäväksi operationaalisen älykkyyden hallintaan, jossa reaaliaikaista dataa koostetaan näkyväksi tiedoksi käyttämällä koostamisfunktioita, MapReducea. Toisaalta MongoDB:n sopii myös tavanomaisen verkkokaupan tuotekatalogin tietovarastona, sillä sen joustava tietomalli antaa mahdollisuuden käyttää sitä myös perinteisissä käyttökohteissa, missä tyypillisesti käytetään relaatiotietokantaa \cite{mongodb}. 
-
-\subsubsection{CouchDB}
-
-CouchDB on dokumenttivarasto, joka tallettaa datan puolirakenteelliseen muotoon, dokumentiksi. CouchDB on toteutettu funktionaalisella Erlang -ohjelmointikielellä, joka keskittyy rinnakkaisuuteen. Sen avulla CouchDB lupaa täyttävänsä ACID-ominaisuudet \cite{couchdb}, jota pidetään CouchDB:n ertyisominaisuutena. Vaikkakin ACID-ominaisuudet täyttyvät vain yhden dokumentin kontekstissa.
-
-\subsection{Sarakepohjaiset tietokannat (column)}
-
-Sarakepohjaiset tietokannat tallentavat dataa relaatiomallin tavalla tauluihin, mutta sarakepohjaisesti. Relaatiomallissa data tallennetaan rivien mukaan. Sarakepohjaisesti dataa tallennettaessa saavutetaan tehokkaita ominaisuuksia erityisiin käyttötarkoituksiin kuten tietovarastointi, CRM-järjestelmät (egl. content relations management) ja metatiedon tallentaminen kuten esimerkiksi kirjastokorttien katalogit \cite{stonebraker2005c}.
-
-Saraketietokannassa samaan sarakkeeseen kuuluva data tallennetaan samaan sarakkeeseen. Näin sarakemallia käyttävä tietokanta on luontaisesti valmiina tarjoamaan tietoa. Esimerkiksi taulukossa \ref{sarakemalli} olevasta skeemasta pystytään hakemaan dataa, niin että tiedetään montako asiakasta asuu tietyssä kaupungissa tai tietyn postinumeron alueella. Hakuoperaatio on todella tehokas verrattuna relaatiotietokantoihin, jossa koko taulun data tulee käydä läpi. Sarakepohjainen tietokanta saa suoraan haetun tiedon ajassa \emph{O(1)}. Tämä antaa käytännöllisiä työkaluja suurten tietomäärien analyysiin. Tämän analyysin avulla voidaan jalostaa liiketoiminnalle hyödyllistä tietoa tai tieteellisessä tilastoinnissa tarvittavaa dataa \cite{stonebraker2005c}.
-
-\begin{table}[h]
-\begin{tabular}{|c|c|c|c|c|c|}
-\multicolumn{6}{c}{Rivimalli}                                            \\[.5\normalbaselineskip] \hline
-ID & etunimi & sukunimi    & katuosoite        & postinumero & kaupunki  \\ \hline \hline
-1  & Tuomas  & Soikkeli    & Kauppakatu 5      & 40100       & Jyväskylä \\ \hline \hline
-2  & John    & Doe         & Laajavuorentie 10 & 40740       & Jyväskylä \\ \hline \hline
-3  & Mary    & Doe         & Laajavuorentie 10 & 40740       & Jyväskylä \\ \hline \hline
-4  & Matti   & Meikäläinen & Pengerkatu 2      & 00500       & Helsinki  \\ \hline 
+\centering
+\begin{tabular}{|c|c|c|c|c|}
+\multicolumn{5}{c}{Rivimalli}                                            \\[.5\normalbaselineskip] \hline
+ID & etunimi & sukunimi    & katuosoite        & postinumero   \\ \hline\hline 
+1  & Tuomas  & Soikkeli    & Kauppakatu 5      & 40100         \\ \hline\hline
+2  & John    & Doe         & Laajavuorentie 10 & 40740         \\ \hline\hline
+3  & Mary    & Doe         & Laajavuorentie 10 & 40740         \\ \hline\hline
+4  & Matti   & Meikäläinen & Pengerkatu 2      & 00500         \\ \hline 
 \end{tabular}
 
-\vspace*{1 cm}
+
+\vspace*{0.5 cm}
 
 \begin{tabular}{|c|l|l|l|l|l|l|l|l|l|l|}
-\multicolumn{11}{c}{Sarakemalli} \\ [.5\normalbaselineskip]
-\cline{1-1}\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}\cline{11-11}
-ID &  & etunimi &  & sukunimi    &  & katuosoite        &  & postinumero &  & kaupunki  \\
-\cline{1-1}\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}\cline{11-11}
-1  &  & Tuomas  &  & Soikkeli    &  & Kauppakatu 5      &  & 40100       &  & Jyväskylä \\
-2  &  & John    &  & Doe         &  & Laajavuorentie 10 &  & 40740       &  & Jyväskylä \\
-3  &  & Mary    &  & Doe         &  & Laajavuorentie 10 &  & 40740       &  & Jyväskylä \\
-4  &  & Matti   &  & Meikäläinen &  & Pengerkatu 2      &  & 00500       &  & Helsinki \\
-\cline{1-1}\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}\cline{11-11}
+\multicolumn{9}{c}{Sarakemalli} \\ [.5\normalbaselineskip]
+\cline{1-1}\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+ID &  & etunimi &  & sukunimi    &  & katuosoite        &  & postinumero  \\
+\cline{1-1}\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
+1  &  & Tuomas  &  & Soikkeli    &  & Kauppakatu 5      &  & 40100        \\
+2  &  & John    &  & Doe         &  & Laajavuorentie 10 &  & 40740        \\
+3  &  & Mary    &  & Doe         &  & Laajavuorentie 10 &  & 40740        \\
+4  &  & Matti   &  & Meikäläinen &  & Pengerkatu 2      &  & 00500        \\
+\cline{1-1}\cline{3-3}\cline{5-5}\cline{7-7}\cline{9-9}
 \end{tabular}
 \caption[SARAKEMALLI JA RIVIMALLI]{Sarakepohjainen tietomalli verrattuna rivipohjaiseen tietomalliin}
 \label{sarakemalli}
-\end{table}
+\end{figure}
 
-\subsubsection{BigTable}
-Googlen käyttöön kehitetty BigTable käyttää tietomallinnaan moniulotteisesta, järjestettyä sanakirja -tie\-to\-ra\-ken\-netta, johon tallennetaan avain-arvo-pareja, jotka ovat indeksoitu käyttäen rivejä, sekä sarakkeita. Tietomalli mahdollistaa tehokkaan hakemisen sarakepohjaisesti tietovaraston tapaan tai perinteisesti rivin avulla. Näin saadaan erityisiä ominaisuuksia datan hakemiseen ja huomattavia tehonlisäyksiä verrattuna perinteiseen taulumalliin tässä käyttötarkoituksessa.\cite{padhy2011rdbms}
+\noindent Googlen käyttöön kehitetty BigTable käyttää tietomallinnaan moniulotteisesta, järjestettyä sanakirja -tie\-to\-ra\-ken\-netta, johon tallennetaan avain-arvo-pareja, jotka on indeksoitu käyttäen rivejä sekä sarakkeita. Tietomalli mahdollistaa tehokkaan hakemisen sarakepohjaisesti tietovaraston tapaan tai perinteisesti rivin avulla. Näin saadaan erityisiä ominaisuuksia datan hakemiseen ja huomattavia tehonlisäyksiä verrattuna perinteiseen taulumalliin.\cite{padhy2011rdbms}
 
-BigTable on onnistunut tietokantatuote Googlen käyttöön ja sitä käyttää myös useat muut suuret yritykset ja organisaatiot. Internetin hakukoneiden indeksointi tallennetaan lähes yksinomaan käyttäen BigTable:a. BigTable on helposti skaalattavissa, se prosessoi tehokkaasti dataa ja sen yksinkertainen ja joustava tietomalli ovat houkutteleva yhdistelmä \cite{chang2008bigtable}.
+BigTable-tietokantaa käyttää Googlen lisäksi myös useat muut suuret yritykset ja organisaatiot. Internetin hakukoneiden indeksointi tallennetaan lähes yksinomaan käyttäen BigTable-tietokantaa. BigTable on helposti skaalattavissa, se käsittelee tehokkaasti dataa ja sen yksinkertainen ja joustava tietomalli ovat houkutteleva yhdistelmä \cite{chang2008bigtable}.
 
 
-\subsection{Verkkotietokannat (graph)}
-NoSQL-tietokantojen neljäs malli on verkkotietokannat. Verkkotietokannoissa tieto tallennetaan verkkomallia käyttäen. Verkkomalli esittää datan verkon solmuina ja niiden välisinä suhteina. \cite{vicknair2010comparison}
-Verkko eli graafi on tietojenkäsittelytieteissä tietomalli, joka koostuu joukosta yksittäisiä solmuja sekä niiden välillä olevista kaarista. Nämä kaaret kuvaavat verkon solmujen välisiä suhteita (kuva \ref{verkko}).
+\subsection{Verkkotietokanta}
+Neljäs NoSQL-tietokantojen tietomalliluokka on verkkotietokanta. Verkkotietokannoissa tieto tallennetaan verkkomallia käyttäen. Verkkomalli (kuva \ref{verkko}). esittää datan verkon solmuissa ja niiden välisissä suhteissa. Verkko on tietojenkäsittelytieteissä tietomalli, joka koostuu joukosta yksittäisiä solmuja sekä niiden välillä olevista kaarista. Nämä kaaret kuvaavat verkon solmujen välisiä suhteita. \cite{vicknair2010comparison}
 
 \begin{figure}[H]
 \begin{center}
@@ -750,13 +748,12 @@ Verkko eli graafi on tietojenkäsittelytieteissä tietomalli, joka koostuu jouko
 \end{center}
 \end{figure}
 
-Verkkotietokannat sopivat käyttötarkoituksiin missä tieto on useassa relaatiossa. Sosiaalinen media, tieteellinen laskenta, sisällönhallinta, suosittelujärjestelmät. Relaatiotietokannan useat JOIN-operaatiot ovat raskaita operaatioita, verkkotietokannassa ne ovat tavallinen operaatio johtuen tietomallista. Useita relaatioita, eli verkon kaaria sisältävä skeema on myös helposti hajautettavissa niin myöskin koostettavissa MapReducen avulla.
+Verkkotietokannat sopivat sellaisiin tilanteisiin missä tieto on verkottunutta eli tieto paljolti relaatiossa. Tämä tarkoittaa että tietoalkiot liittyvät toisiinsa verkon kaaren avulla. Esimerkkejä verkkottuneesta tiedosta on sosiaalinen media, sisällönhallinta, suosittelujärjestelmät. Verkkotietokannat ovat hyödyllisiä myös tieteellisessä laskennassa. Jos tietokannan rakenteeseen kuuluu paljon monesta-moneen relaatioita, relaatiotietokannassa käytetään liitostauluja. Liitostaulut liitetään yhteen viiteavaimen avulla. Relaatiotietokannan useat liitokset (join) ovat raskaita, joita pyritään nopeuttamaan denormalisoimalla skeemaa. Verkkotietokannassa liitos on tavallinen operaatio. Jokainen verkon solu sisältää listan suhteistaan toisiin verkon soluihin. Nämä suhteet ovat järjestetty tyypin suunnan ja tyypin mukaan. Liitosta vastaava operaatio hakee tämän solun suhdetaulukosta lista, jolloin sillä on suora yhteys siihen liittyviin alkioihin. Tällöin tarve usean eri taulun läpikäyntiin häviää. Useita suhteita, eli verkon kaaria sisältävä skeema on myös helposti hajautettavissa ja koostettavissa MapReducen avulla.
+
+Neo4j on Neo Technology -nimisen yrityksen valmistama avoimen lähdekoodin verkkotietokanta. Pääominaisuutena Neo4j:ssä katsotaan olevan ACID-ominaisuuksien noudattaminen. Neo4j tallettaa massivisen määrän dataa, mutta samalla takaa horisontaalisesti skaalattavissa ja tiedon jatkuvan saatavilla olon. Neo4j tarjoaa oman kyselykielen, jonka mainostetaan olevan tehokas ja luonnollista kieltä muistuttava kuten SQL-kieli. Hakuja on mahdollista tehdä myös REST-rajapinnan yli tai suoralla Java API:lla.
 
 
-\subsubsection{Neo4J}
-
-Neo4j on Neo Technology:n valmistama avoimen lähdekoodin verkkotietokanta, jonka tietomallina toimii luonnollisesti verkko. Pääominaisuutena Neo4j:ssä katsotaan olevan ACID-ominaisuuksien noudattaminen. Neo4j tallettaa massivisen määrn dataa ollessaan samalla horisontaalisesti skaalattavissa ja tiedon ollessa jatkuvasti kuitenkin saatavilla. Neo4j tarjoaa oman verkkomalli-hakukielen, jonka mainostetaan olevan tehokas ja luonnollista kieltä muistuttava kuten SQL-keili. Hakuja on mahdollista tehdä myös REST-rajapinnan yli tai suoralla Java API:lla.
-
+{\color{red}
 \jyusection{YHTEENVETO}
 
 NoSQL-tietokannat eroavat suuresti relaatiotietokannoista ja eivät noudata relaatiomallia.  NoSQL-tieto\-kannoista puuttuu tarkoituksellisesti tiettyjä relaatiotietokantojen ominaisuuksia, jotta saavutetaan tehokkuutta ja skaalautuvuutta. NoSQL-tieto\-kannat kuuluvat useisiin eri kategorioihin, joita on vaikea luokitella. Eri kategoiroiden NoSQL-tietokannoilla on moninaisia käyttötapauksia ja rajoitteita.
@@ -771,8 +768,9 @@ NoSQL-tietokannat ovat saaneet osakseen huomattavan määrän kritiikkiä. Tutki
 
 
 %bibliography
-\jyubibliography{viitteet}
 
+\jyubibliography{viitteet}
+}
 
 %\attachmentsection{LIITE 1 ENSIMMÄINEN LIITE}
 %\attachmentsection{LIITE 1 ENSIMMÄINEN LIITE}
