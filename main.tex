@@ -578,7 +578,7 @@ Yksinkertaisin NoSQL-tietomalli käyttää tiedon tallentamiseen avain-arvo-pare
 \end{center}
 \end{figure}
 
-Avain-arvo-paritietokantojen käyttäminen on yleensä hyvin yksinkertaista (kuva \ref{pseudokeyvalue}), sillä erillistä hakukieltä, kuten SQL-kieltä ei käytetä. Hakuja voidaan tehdä vain avaimen avulla (joissakin tapauksissa arvo voi olla numeerinen arvo, jonka perusteella voidaan tehdä hakuja). Koska arvoja vasten ei voida tehdä hakuja, tietomallilla ei ole tiedossa olevaa rakennetta. Näin saavutetaan erittäin tehokkaat perusoperaatiot \emph{put()} ja \emph{get()}. 
+Avain-arvo-varastojen käyttäminen on yleensä hyvin yksinkertaista (kuva \ref{pseudokeyvalue}), sillä erillistä hakukieltä, kuten SQL-kieltä ei käytetä. Hakuja voidaan tehdä vain avaimen avulla (joissakin tapauksissa arvo voi olla numeerinen arvo, jonka perusteella voidaan tehdä hakuja). Koska arvoja vasten ei voida tehdä hakuja, tietomallilla ei ole tiedossa olevaa rakennetta. Näin saavutetaan erittäin tehokkaat perusoperaatiot \emph{put()} ja \emph{get()}. 
 
 \begin{figure}[H]
 \begin{center}
@@ -603,7 +603,7 @@ tulosta(etunimi + " " + sukunimi + " " + email);
 
 
 \end{minted}
-\caption[AVAIN-ARVO-PARITVARASTON KÄYTTÖ]{Avain-arvo-parivaraston käyttö, pseudokieli} 
+\caption[AVAIN-ARVO-VARASTON KÄYTTÖ]{Avain-arvo-varaston käyttö, pseudokieli} 
 \label{pseudokeyvalue}
 
 \end{center}
@@ -611,7 +611,7 @@ tulosta(etunimi + " " + sukunimi + " " + email);
 
 \subsubsection{Dynamo}
 
-Dynamo on Amazonin suunnittelama ja toteuttava avain-arvo-paritietokanta. Amazon kehitti dynamoa omiin tarpeisiinsa ja lopulta siitä julkaistiin artikkeli "Dynamo: Amazon's Highly Available Key-value Store" \cite{decandia2007dynamo}, joka onkin pohjana useille uusille NoSQL-tietokannoille. 
+Dynamo on Amazonin suunnittelama ja toteuttava avain-arvo-varasto. Amazon kehitti dynamoa omiin tarpeisiinsa ja lopulta siitä julkaistiin artikkeli "Dynamo: Amazon's Highly Available Key-value Store" \cite{decandia2007dynamo}, joka onkin pohjana useille uusille NoSQL-tietokannoille. 
 
 Dynamolla on tähtitieteelliset vaatimukset. Esimerkiksi Amazonin verkkokaupassa oleva ostoskärry -palvelu käsittelee yli kolme miljoonaa ostosta päivässä ja yhtäaikaisia asiakkaita tai tiloja on käytössä satoja tuhansia. 
 
@@ -619,7 +619,7 @@ Lopputuloksena on erittäin tehokas, saatavilla oleva, järjstelmän kaatumisest
 
 \subsection{Dokumenttivarasto}
 
-Dokumenttitietokannat tallentavat datan dokumentteihin, jotka on järjestetty avain-arvopari-varaston tapaan osoittimen avulla. Dokumenttitietokannat ovat kuten avain-arvo-pari\-varastoja, mutta arvona voidaan tallentaa toisisijaisia osoittimia, listoja tai muita monimutkaisempia tietorakenteita. Toisinsanoen tämä tarkoittaa, että dokumenttivarastot voivat tallentaa vapaamuotoista, ei-relaationaalista dataa, dokumentteja (kuva \ref{json}). Dokumenttivarastot eivät keskity korkeisiin luku- ja kirjoitusnopeuksiin vaan tarjoavat kattavan tavan tallentaa tiedon valtavaa massaa, ilman ennaltamääriteltyä rakennetta eli skeemaa. Hakuominaisuudet ovat usein monipuoliset, koska avain-arvo-parivarastoista eroten, dataa voidaan hakea myös avaimen lisäksi arvoista.  
+Dokumenttitietokannat tallentavat datan dokumentteihin, jotka on järjestetty avain-arvopari-varaston tapaan osoittimen avulla. Dokumenttitietokannat ovat kuten avain-arvo-varastoja, mutta arvona voidaan tallentaa toisisijaisia osoittimia, listoja tai muita monimutkaisempia tietorakenteita. Toisinsanoen tämä tarkoittaa, että dokumenttivarastot voivat tallentaa vapaamuotoista, ei-relaationaalista dataa, dokumentteja (kuva \ref{json}). Dokumenttivarastot eivät keskity korkeisiin luku- ja kirjoitusnopeuksiin vaan tarjoavat kattavan tavan tallentaa tiedon valtavaa massaa, ilman ennaltamääriteltyä rakennetta eli skeemaa. Hakuominaisuudet ovat usein monipuoliset, koska avain-arvo-varastoista eroten, dataa voidaan hakea myös avaimen lisäksi arvoista.  
 
 \begin{figure}[H]
 \begin{center}
@@ -753,7 +753,7 @@ Neo4j on Neo Technology:n valmistama avoimen lähdekoodin verkkotietokanta, jonk
 
 NoSQL-tietokannat eroavat suuresti relaatiotietokannoista ja eivät noudata relaatiomallia.  NoSQL-tieto\-kannoista puuttuu tarkoituksellisesti tiettyjä relaatiotietokantojen ominaisuuksia, jotta saavutetaan tehokkuutta ja skaalautuvuutta. NoSQL-tieto\-kannat kuuluvat useisiin eri kategorioihin, joita on vaikea luokitella. Eri kategoiroiden NoSQL-tietokannoilla on moninaisia käyttötapauksia ja rajoitteita.
 
-Avain-arvo-parivarastot keskittyvät tiedon tehokkaaseen käsittelyyn ja järjestelmän skaalautuvuuteen, ja usein ne tarjoavat vain rajallisen hakukielen tai -raja\-pinnan. Dokumenttivarastot ovat yleiskäyttöisempiä ja ne käyttävät hieman monimutkaisempia hakujärjestelmiä. Sarakepohjaiset tietokannat ovat suosittuja järjestelmiä tietovarastointiin ja analytiikkaan. Verkkotietokannat ovat verkkomallia käyttäviä tietokantoja, joihin tietoa voidaan tallentaa verkkoon. Tämä on luonnollinen malli tallentaa esimerkiksi sosiaalisen median dataa.
+Avain-arvo-varastot keskittyvät tiedon tehokkaaseen käsittelyyn ja järjestelmän skaalautuvuuteen, ja usein ne tarjoavat vain rajallisen hakukielen tai -raja\-pinnan. Dokumenttivarastot ovat yleiskäyttöisempiä ja ne käyttävät hieman monimutkaisempia hakujärjestelmiä. Sarakepohjaiset tietokannat ovat suosittuja järjestelmiä tietovarastointiin ja analytiikkaan. Verkkotietokannat ovat verkkomallia käyttäviä tietokantoja, joihin tietoa voidaan tallentaa verkkoon. Tämä on luonnollinen malli tallentaa esimerkiksi sosiaalisen median dataa.
 
 NoSQL-tietokantojen ominaispiirteitä ovat hajautettavuus, tehokkuus, yksinkertaisuus ja SQL-hakukielen puuttuminen. Näiden lisäksi NoSQL-tietokantojen oikeellisuumalli katsotaan olevan lähempänä BASE-ominaisuuksia kuin ACID-omi\-nai\-suuk\-sia, mutta poikkeuksia on runsaasti. 
 
