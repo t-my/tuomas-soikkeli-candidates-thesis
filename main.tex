@@ -724,18 +724,18 @@ Verkko eli graafi on tietojenkäsittelytieteissä tietomalli, joka koostuu jouko
 
 \begin{tikzpicture}[scale=.8,auto=left]
   
-  \tikzstyle{every node}=[font=\footnotesize]
-  \node[circle,fill=blue!20,align=center] (n6) at (0,10) 
+  \tikzstyle{every node}=[font=\footnotesize,align=center]
+  \node[circle,fill=blue!20] (n6) at (0,10) 
     {enimi : Tuomas \\ simi : Soikkeli \\ pno : 40700};
-  \node[circle,fill=blue!20,align=center] (n4) at (6,7)
+  \node[circle,fill=blue!20,] (n4) at (6,7)
     {enimi : Juha \\ simi : Kalevi \\ pno : 40100};
-  \node[circle,fill=blue!20,align=center] (n5) at (12,9)  
+  \node[circle,fill=blue!20,] (n5) at (12,9)  
     {enimi : Maija \\ kaup : JKL};
-  \node[circle,fill=blue!20,align=center] (n1) at (16,6) 
+  \node[circle,fill=blue!20,] (n1) at (16,6) 
     {enimi :Kalervo \\ \ldots };
-  \node[circle,fill=blue!20,align=center] (n2) at (9,4)  
+  \node[circle,fill=blue!20,] (n2) at (9,4)  
     {kuva : pekka.jpg \\ url : \ldots};
-  \node[circle,fill=blue!20,align=center] (n3) at (2,3)
+  \node[circle,fill=blue!20,] (n3) at (2,3)
     {enimi: Pekka \\ tila : ihana päivä};
 
   \foreach \from/\to in {n6/n4,n4/n5,n5/n1,n3/n4} 
