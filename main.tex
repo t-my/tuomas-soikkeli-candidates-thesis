@@ -157,11 +157,10 @@
 %\addcontentsline{toc}{section}{TIIVISTELMÄ}
 Soikkeli, Tuomas-Matti \hfill \\
 Kandidaatintutkielma \hfill \\
-Jyväskylä: Jyväskylän yliopisto, 2014, \pageref{LastPage} s. \hfill \\
+Jyväskylä: Jyväskylän yliopisto, 2015, \pageref{LastPage} s. \hfill \\
 Tietojärjestelmätiede \hfill \\
 Ohjaaja: Leppänen, Mauri \hfill \\ \\
-{\color{red}
-Tässä tutkielmassa tutkitaan kirjallisuuskatsauksen avulla miten NoSQL-tietokantoja voidaan luokitella ja mitkä ovat niiden käyttökohteet. Toiseksi tutkitaan miten NoSQL-tietokannat ovat kehittyneet ja minkälaisia ominaispiirteiltä niillä on. Samalla tutustutaan miten NoSQ-tietokannat eroavat perinteisistä relaatiotietokannoista ja voidaanko relaatiotietokannat korvata NoSQL-tietokannoilla. Lisäksi tutkitaan NoSQL-tietokantoihin kohdistunutta krittiikiä. Lopuksi tässä tutkielmassa NoSQL-tietokannat luokitellaan neljään ryhmään: avain-arvopari-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Jokaisen tietomallin kohdalla esitellään tarkemmin tietomallin piirteet ja käyttökohteet sekä havainnollistetaan tietomallia esimerkein.} \hfill \\ \\
+NoSQL-tietokannat ovat olleet eräitä 2000-luvun kiistellyimmistä teknologioista. Niiden käyttötarkoituksista tai hyödyllisyydestä ei ole yleisesti hyväksyttyä tutkimustietoa johtuen NoSQL-tietokantojen kehittymättömyydestä. Tämän tutkielman tarkoituksena selvitetään miten NoSQL-tietokantoja voidaan luokitella ja mitkä ovat niiden käyttökohteet. Tätä varten kerrotaan ensin, miten NoSQL-tietokannat ovat kehittyneet ja minkälaisia ominaispiirteiltä niillä on. Sitten kuvataan, miten NoSQL-tietokannat eroavat perinteisistä relaatiotietokannoista ja voidaanko relaatiotietokannat korvata NoSQL-tietokannoilla. Lopuksi esitetään NoSQL-tietokantoihin kohdistunutta kritiikkiä. Tutkimuksessa luokitellaan NoSQL-tietokannat luokitellaan neljään ryhmään: avain-arvopari-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Jokaisen tietomallin osalta esitellään tarkemmin tietomallin piirteet ja käyttökohteet sekä havainnollistetaan tietomallia esimerkein. Tutkimuksen tuloksia voidaan hyödyntää esimerkiksi yritysten teknologiavalintoihin, sillä ne vaikuttavat projektin onnistumiseen. Toisaalta tämä tutkimus toimii perehdytyksenä aihealueeseen jatkotutkimusta tehdessä.  \hfill \\ \\
 Asiasanat: NoSQL, tietokanta, ei-relaationaalinen \hfill
 \newpage
 
@@ -176,8 +175,7 @@ Candidate's thesis  \hfill \\
 Jyväskylä: University of Jyväskylä, 2014, \pageref{LastPage} p. \hfill \\
 Information Systems, Candidates Thesis \hfill \\
 Supervisor(s): Leppänen, Mauri \hfill \\ \\
-
-{\color{red}In this candidate's thesis NoSQL-databases are researched to categorize and identify the most common usecases for them. Secondly the author researches how NoSQL-databases are evolved and what are their main properties. At the same time, NoSQL-databases are compared how they differ from ordinary relational database management systems and are these relational databases replaceable with NoSQL-databases. Moreover we study the critque that the NoSQL faces. Finally, NoSQL-databases are divided into four groups: key-value stores, document stores, column based databases and graph databases. In each data model we study the common properties of particular data model and we explore the use cases for these data models. This is done by providing real-world examples. \hfill \\ \\}
+NoSQL-datastores have been one of the most controversial technologies of 20th century. Currently we have no eminent evidence that NoSQL-databases are useful and how they should be used. In this candidate's thesis NoSQL-databases are researched to categorize and identify the most common usecases for them. Secondly the author researches how NoSQL-databases are evolved and what are their main properties. At the same time, NoSQL-databases are compared how they differ from ordinary relational database management systems and are these relational databases replaceable with NoSQL-databases. Moreover we study the critque that the NoSQL faces. Finally, NoSQL-databases are divided into four groups: key-value stores, document stores, column based databases and graph databases. In each data model we study the common properties of particular data model and we explore the use cases for these data models. Entrerprises can use this study to aid them with selectiong of technology. This can lead to successful software project. On the other hand researches can use this study to famliarize themselves to the area of knowledge.  \hfill \\ \\
 Keywords: NoSQL, database, non-relational \hfill 
 \newpage
 
@@ -203,29 +201,25 @@ Keywords: NoSQL, database, non-relational \hfill
 %add page numberin on top
 \fancyhf{}
 \renewcommand{\headrulewidth}{0pt}
-\fancyhead[LE,RO]{\thepage}
+\fancyhead[C]{\thepage}
 \pagestyle{fancy}
 
 %contents
-\jyusection{ESIPUHE}
-Tämä tutkielma on tehty \LaTeX-ladontajärjestelmällä, jota suosittelen lämpimästi kaikille tutkielman kirjoittajille. Tutkimussuunnitelman kirjoittamisen aikaan Jyväskylän Yliopiston Tietojärjestelmätieteiden opiskelijoille oli tarjolla vain Microsoft Word -dokumenttipohja, jonka moninaiset ongelmat saivat minut harkitsemaan muita vaihtoehtoja. Tuloksena syntyi dokumenttipohja, jonka olen julkaissut avoimena lähdekoodina. Varoituksen sanana voin sanoa, että siirtymä tavanomaisista tekstinkäsittelyohjelmista ei ole helppo. Opettelu vaatii runsaasti aikaa, kuten tämän tutkielman tekeminen osoitti.
+\section*{ESIPUHE}
+\thispagestyle{empty}
+Tämä tutkielma on tehty \LaTeX-ladontajärjestelmällä, jota suosittelen lämpimästi kaikille tutkielman kirjoittajille. Tutkimussuunnitelman kirjoittamisen aikaan Jyväskylän Yliopiston Tietojärjestelmätieteiden opiskelijoille oli tarjolla vain Microsoft Word -dokumenttipohja, jonka moninaiset ongelmat saivat minut harkitsemaan muita vaihtoehtoja. Tuloksena syntyi tutkielma, jonka olen julkaissut avoimena lähdekoodina. Varoituksen sanana voin sanoa, että siirtymä tavanomaisista tekstinkäsittelyohjelmista ei ole helppo. Opettelu vaatii runsaasti aikaa, kuten tämän tutkielman tekeminen osoitti. 
 
-Päädyin käyttämään tekstin ja koodin muokkamiseen web-pohjaista, sekä ilmaista ShareLatex (http://www.sharelatex.com) -palvelua. ShareLatex-editori ja -kääntäjä suoraviivaistaa monia \LaTeX:n monimutkaisuuksia. Lähdekoodi on saatavilla kokonaisuudessaan osoitteesta: https://github.com/t-my/tuomas-soikkeli-candidates-thesis
+Päädyin käyttämään tekstin ja koodin muokkamiseen web-pohjaista, sekä ilmaista ShareLatex (http://www.sharelatex.com) -palvelua. ShareLatex-editori ja -kääntäjä suoraviivaistaa monia \LaTeX:n monimutkaisuuksia. Lähdekoodi on saatavilla kokonaisuudessaan osoitteesta https://github.com/t-my/tuomas-soikkeli-candidates-thesis
 
 
-{\color{red}
 \jyusection{JOHDANTO}
 
-Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä operaatioita. Siten datamäärien kasvaessa eksponentiaalisesti on kehitetty ei-relaationaalisia tietokantajärjestelmiä. Näitä järjestelmiä kutsutaan NoSQL -tietokannoiksi. \cite{leavitt2010will, pokorny2013nosql}
-
-2000-luvulta alkaen on kehitetty NoSQL-tietokantoja perinteisten relaatiotietokantojen rinnalle. 
-
-Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Myös muita tietomalleja käyttäviä järjestelmiä on runsaasti, mutta tässä tutkielmassa keskitytään näiden neljän tietomallin tutkimiseen. \cite{cattell2011scalable}
+Useat suuret organisaatiot ja yritykset kuten esimerkiksi Google, Amazon ja LinkedIn tallentavat mittavia määriä dataa jatkokäyttöä ja analyysiä varten. Tyypillisesti tiedon tallentamiseen on käytetty SQL-tietokantoja, joihin tieto tallennetaan rakenteelliseen muotoon relaatiomallin mukaan. Rakenteellisen tiedon tallennus ja hakeminen ovat kalliita ja aikaavieviä operaatioita. Siten datamäärien kasvaessa eksponentiaalisesti on kehitetty ei-relaationaalisia tietokantajärjestelmiä. Näitä järjestelmiä kutsutaan NoSQL -tietokannoiksi. \cite{leavitt2010will, pokorny2013nosql} 2000-luvulta alkaen on kehitetty NoSQL-tietokantoja perinteisten relaatiotietokantojen rinnalle. Näitä tietomalleja ovat esimerkiksi avain-arvo-pari\-varastot, dokumenttivarastot, sarakepohjaiset tietokannat ja verkkotietokannat. Myös muita tietomalleja käyttäviä järjestelmiä on runsaasti, mutta tässä tutkielmassa keskitytään näiden neljän tietomallin tutkimiseen. \cite{cattell2011scalable}
 
 
 NoSQL-tietokantojen nuoren iän myötä NoSQL-tietokannoista ei ole kattavaa tutkimustietoa. Tässä tutkielmassa tutkitaan näitä epäselvyyksiä seuraavien tutkimuskysymysten avulla:
 
-\begin{itemize}
+\item Mitä ovat NoSQL-tietokantojen perusominaisuudet?
 
 \item Miten NoSQL-tietokantoja voidaan luokitella?
 
@@ -233,16 +227,12 @@ NoSQL-tietokantojen nuoren iän myötä NoSQL-tietokannoista ei ole kattavaa tut
 
 \item Mihin käyttötarkoitukseen NoSQL-tietokantoja voidaan käyttää?
 
-\item Voidaanko NoSQL-tietokannoilla korvata relaatiotietokannat?
-
-\end{itemize}
-
 Tämä tutkielma selvittää kirjallisuuskatsauksen avulla aluksi NoSQL-tieto\-kantojen kehitykseen ja historiaan liittyviä seikkoja. Sen jälkeen tutkitaan miksi NoSQL-tieto\-kannat ovat kasvattaneet suosiotaan, miten NoSQL-tietokantoja voidaan luokitella sekä mitä käyttökohteita NoSQL-tietokannoilla on. Samalla selvitetään miten nämä tietokannat eroavat relaatiomallista ja sen tiedon manipulointiin liittyvästä SQL-kielestä. 
 
 Tämän tutkimuksen avulla lukijaa saa selvän kuvan tietokantojen teoriapohjasta, NoSQL-tietokantojen tyypillisistä käyttökohteista sekä tavanomaisista ominaisuuksista.
 
-Tämä tutkimus jakaantuu kolmeen sisältölukuun. Ensimmäisessä sisältöluvussa tutustutaan NoSQL-tietokantojen kehittymiseen johtaneisiin seikkioihin eli historiaan. Tämän lisäksi ensimmäisessä kappalessa käydään läpi relaatiotietkantojen ja NoSQL-tietokantojen toiminnan teoriaa ja ominaisuuksia. Toisessa kappalessa määritelmän jälkeen käydään läpi NoSQL-tietokantojen keskisimmät ominaisuudet ja yleisimmät määrittelevät tekijät. Toisen kappaleen lopussa käsitellään myös krittiikkiä aiheeseen liittyen.Kolmannessa kappaleessa esitellään aluksi luokittu, jonka jälkeen käydään läpi tietokantasovelluksia tietomalleittain.
-}
+Tämä tutkimus jakaantuu kolmeen sisältölukuun. Ensimmäisessä sisältöluvussa tutustutaan NoSQL-tietokantojen kehittymiseen johtaneisiin seikkoihin eli historiaan. Tämän lisäksi ensimmäisessä kappaleessa käydään läpi relaatiotietokantojen ja NoSQL-tietokantojen toiminnan teoriaa ja ominaisuuksia. Toisessa kappaleessa määritelmän jälkeen käydään läpi NoSQL-tietokantojen keskeisimmät ominaisuudet ja yleisimmät määrittelevät tekijät. Toisen kappaleen lopussa käsitellään myös krittiikkiä aiheeseen liittyen.Kolmannessa kappaleessa esitellään aluksi luokittu, jonka jälkeen käydään läpi tietokantasovelluksia tietomalleittain.
+
 
 \jyusection{NOSQL-TIETOKANTOJEN TAUSTA} 
 
@@ -264,7 +254,7 @@ table/.style={matrix of nodes, nodes in empty cells, column sep=-\pgflinewidth, 
     ID & Nimi \\ & \\};
 
 \matrix(Opettaja) [table, label=above:Opettaja, left=1cm of Laitos] {
-    ID & Name & LaitosID \\ & & \\};
+    ID & Nimi & LaitosID \\ & & \\};
 
 \matrix(Kurssi) [table, label=above:Kurssi, below=1.35cm of Opettaja] {
     ID & Kuvaus & OpeID & OpiID \\ & & & \\};
@@ -363,9 +353,9 @@ BASE-ominaisuudet tarkoittavat käytännössä, että tietokantajärjestelmä sa
 
 \jyusection{NOSQL-TIETOKANNAT}
 
-Tässä luvussa esitellän NoSQL-tietokantoja, jotka pyrkivät ratkaisemaan jatkuvasti kasvavan tiedon määrän luomat haasteet. Aluksi määritellään NoSQL-käsite. Toiseksi esitellään NoSQL-tietokantojen keskeisiä ominaisuuksia. Kolmanneksi kerrotaan NoSQL-tietokantoja kohtaan esitetystä kritiikistä.
+Tässä luvussa esitellän NoSQL-tietokantoja, jotka pyrkivät ratkaisemaan jatkuvasti kasvavan tiedon määrän luomat haasteet. Aluksi kerrotaan NoSQL-käsitteen taustasta. Toiseksi esitellään NoSQL-tietokantojen keskeisiä ominaisuuksia. Kolmanneksi kerrotaan NoSQL-tietokantoja kohtaan esitetystä kritiikistä.
 
-\subsection{Määritelmä}
+\subsection{Tausta}
 
 NoSQL-käsitettä käytettiin ensimmäistä kertaa jo vuonna 1998, kun \citeA{nosql1998} julkaisi relationaalisen tietokannanhallintajärjestelmän, joka ei käyttänyt SQL-kieltä tiedon tallennukseen tai hakemiseen. Suurempaan tietoisuuteen NoSQL-tieto\-kannat levisivät kuitenkin vasta 2009 kun Last.fm yhteisöpalvelun kehittäjä Jon Oskarsson kutsui koolle kehittäjiä kuulemaan NoSQL-tietokannoista \cite{nosql2009}. 
 
@@ -386,13 +376,9 @@ Myös pilvilaskentaa voidaan siis hyödyntää NoSQL-tietokantojen yhtedessä. N
 
 Hajautetussa järjestelmässä tieto voidaan replikoida verkon solmuihin. Tämän onkin tyypillisesti NoSQL-tietokantojen tapa varmistua tiedon eheydestä, kun taas relaatiotietokannat varmistavat tiedon eheyden vain tapahtumien suhteen, eikä relaatiotietokannoilla ole helppoa tapaa tiedon replikointiin. Tämä johtuu siitä, että verkon solmujen välillä ACID-ominaisuuksien takaaminen on vaikea ja kallis operaatio. 
 
-MapReduce (kuvio 3) on Googlen kehittämä ohjelmointiparadigma, joka mahdollistaa massadatan käsittelyn käyttäen yksinkertaisia tekniikkaa, jonka ansiosta työ on helppo hajauttaa. Näin saavutetaan tehokas tapa prosessoida valtavia määriä dataa. Suuret Internetin toimijat kuten Amazon, Google sekä Facebook ovat rakentaneet omat datan analyysi- ja hakujärjestelmänsä käyttäen MapReduce -ohjelmia laajamittaisesti. \cite{dean2008mapreduce}
+MapReduce (kuvio 3) on Googlen kehittämä ohjelmointiparadigma, joka mahdollistaa massadatan käsittelyn käyttäen yksinkertaisia tekniikkaa, jonka ansiosta työ on helppo hajauttaa. Näin saavutetaan tehokas tapa prosessoida valtavia määriä dataa. Suuret Internetin toimijat kuten Amazon, Google sekä Facebook ovat rakentaneet omat datan analyysi- ja hakujärjestelmänsä käyttäen MapReduce -ohjelmia laajamittaisesti. MapReduce on ohjelma tai algoritmi joka käyttää NoSQL-tietokantoja. Joihinkin tietokantoihin se on sisäänrakennettu, mutta sen ei tarvitse olla osa NoSQL-tietokantaa. MapReduce käyttää hyväkseen NoSQL-tietokannan helppoa hajautettavuutta tiedon prosessoinnissa. Iso tietomäärä on tehokasta hajauttaa laskettavaksi MapReducen avulla. Satojen tai tuhansien tietokoneiden verkko käsittelee tietoa rinnakain, jolloin suuri määrä tietoa saadaan käsitellyksi järkevässä ajassa. MapReduce on kaksivaiheinen algoritmi. Sen ensimmäinen vaihe on \emph{map()}- funktio, joka hyväksyy parametrikseen arvoja ja antaa palautusarvona on avain-arvo\-pareja. Nämä toimivat syötteenä \emph{reduce()} -funktiolle, joka laskee yhteen tai muulla tavalla koostaa aiemmin lasketun arvojen summan.  Funktioiden suoritus voidaan hajauttaa järjestelmän solmuille, jolloin laskenta suoritetaan rinnakkain. Pääsolmu jakaa tehtävän pienempiin osiin ja lähettää tehtävän eteenpäin verkossa. Seuraavat verkon solmut voivat tehdä tämän tehtävän uudestaan, kunnes tehtävä on riittävän pieninä tehtävinä tai verkon kaikki solmut ovat käytössä. Tulokset palautetaan sen lähettäneelle solmulle, joka yhdistää tuloksia ja lähettää sen eteenpäin kunnes kaikki tulokset ovat laskettu \cite{dean2008mapreduce}.
 
-MapReduce on ohjelma tai algoritmi joka käyttää NoSQL-tietokantoja. Joihinkin tietokantoihin se on sisäänrakennettu, mutta sen ei tarvitse olla osa NoSQL-tietokantaa. MapReduce käyttää hyväkseen NoSQL-tietokannan helppoa hajautettavuutta tiedon prosessoinnissa. Erityisesti isot tietomäärät on tehokasta hajauttaa laskettavaksi MapReducen avulla. {\color{red}viite}
-
-MapReduce on kaksivaiheinen algoritmi. Sen ensimmäinen vaihe on \emph{Map()}- funktio, joka hyväksyy parametrikseen arvoja ja antaa palautusarvona on avain-arvo\-pareja. Nämä toimivat syötteenä \emph{Reduce()} -funktiolle, joka laskee yhteen tai muulla tavalla koostaa aiemmin lasketun arvojen summan.  Funktioiden suoritus voidaan hajauttaa järjestelmän solmuille, jolloin laskenta suoritetaan rinnakkain. Pääsolmu jakaa tehtävän pienempiin osiin ja lähettää tehtävän eteenpäin verkossa. Seuraavat verkon solmut voivat tehdä tämän tehtävän uudestaan, kunnes tehtävä on riittävän pieninä tehtävinä tai verkon kaikki solmut ovat käytössä. Tulokset palautetaan sen lähettäneelle solmulle, joka yhdistää tuloksia ja lähettää sen eteenpäin kunnes kaikki tulokset ovat laskettu. {\color{red}viite}
-
-MapReducea voidaan käyttää esimerkiksi sanojen esiintymisen selvittämiseen dokumenteissa, joka lienee yleisin käyttötapaus internetin hakukoneiden toimintaan liittyen. Aluksi \emph{Map()} -funktio laskee yhteen jokaisessa dokumentissa esiintyvän sanan ja lisää sen tuloksen siihen liittyvään sanaan. Seuraavaksi \emph{Reduce()} -funktio summaa sanat ja sen esiintymien summan, josta vastaukseksi saadaan kaikkien sanojen esiintymien summat. {\color{red} viite} .
+MapReducea voidaan käyttää esimerkiksi sanojen esiintymisen selvittämiseen dokumenteissa, joka lienee yleisin käyttötapaus internetin hakukoneiden toimintaan liittyen. Aluksi \emph{Map()} -funktio laskee yhteen jokaisessa dokumentissa esiintyvän sanan ja lisää sen tuloksen siihen liittyvään sanaan. Seuraavaksi \emph{Reduce()} -funktio summaa sanat ja sen esiintymien summan, josta vastaukseksi saadaan kaikkien sanojen esiintymien summat \cite{dean2008mapreduce}. 
 
 
 \begin{figure}[H]
@@ -426,11 +412,14 @@ reduce(String avain, String[] arvot):
 \end{center}
 \end{figure}
 
+\subsection{Skeemattomuus}
+Skeemattomuudella tarkoitetaan tiedon kopiointia moneen eri tauluun tai dokumenttiin. Jos tieto sijoitetaan yhteen dokumenttiin relaation sijasta, saadaan aikaan tehokas hakuoperaatio, sillä tietoa ei tarvitse hakea monesta eri paikasta. Toisaalta tietoa joudutaan monistamaan. Näin tiedon kokonaismäärä kasvaa ja levytilaa käytetään enemmän. Tiedon eheyden ylläpitäminen skeemattomassa tietomallissa on vaikeaa. Eheyden ylläpitämisestä tulee raskas operaatio, sillä päivityksen myötä joudutaan käymään useita eri dokumentteja läpi yhden sijasta. Usein NoSQL-tietokannoissa ei taata tiedon eheyttä, vaan monessa eri dokumentissa olevaa tietoa joudutaan ylläpitämään ohjelmatasolla \cite{cattell2011scalable}.
 
+Relaatiotietokannoista poiketen skeemattomassa tietokannassa tietoa denormalisoimaan, jotta saavutetaan nopeampia hakuja. Denormalisoinnilla tarkoitetaan, että tieto tallennetaan samaan dokumenttiin/tauluun. Relaatiotietokannassa tietoa tallennetaan skeeman määräämällä tavalla. Tämän lupauksen puuttuessa, voidaan tietoa palauttaa ilman rajoitteita tiedon muotoon liittyen \cite{vajk2013denormalizing}. 
 
-\subsection{Yksinkertaisuus}
-Yksi merkittävimmistä eroista relaatiotietokantoihin on NoSQL-tietokantojen yksinkertainen käyttö. Yksinkertaisuudella tarkoitetaan tässä tapauksessa monimutkaisen hakukielen ja skeeman puuttumista. Ohjelmistokehitys voidaan aloittaa ilman mittavaa tietokannan määrittelyprosessia, mikä vähentää kehityskustannuksia. Toisaalta ACID-ominaisuuksia haluttaessa joudutaan tekemään enemmän töitä sovelluskerroksella. Myös monimutkaisten hakujen toteuttaminen ilman SQL-kielen kaltaista, hyväksi havaittua, hakujärjestelmää on erittäin vaikeaa \cite{leavitt2010will}.
+Skeemattomuudesta ja denormalisoinnista johtuen liitos (JOIN) -operaatioita ei tyypillisesti tueta NoSQL-tietokannoissa. Liitos -operaatioita kuitenkin tarvitaan esimerkiksi monesta moneen relaatiossa. Tällöin liitos toteutetaan tietokantajärjestelmän sijaan ohjelmatasolla.  \cite{pokorny2013nosql}.
 
+Skeemattoman tietokannan joustavuus on NoSQL-tietokantojen yksi keskeisimmistä ominaisuuksista. Kehittäminen on helppo aloittaa ja nähdään nopeasti tuloksia ilman pitkäkestoista tietokannan määrittelyä. Tehokkaiden hakujen kehittäminen on suoraviivaista, mutta tiedon eheys joudutaan kehittämään itse ohjelmatasolla, mikäli se on ohjelman vaatimuksena. Toisaalta monimutkaisten hakujen toteuttaminen on vaikeaa ilman SQL-hakukieltä \cite{leavitt2010will}.
 
 \subsection{Rajapinta ja kyselykielet}
 
@@ -438,70 +427,9 @@ Varsin näkyvä ominaisuus NoSQL-tietokannoissa on ohjelmointirajapinta, joka vo
 
 Useat, mutta eivät kaikki, NoSQL-tietokannat tarjoavat REST-rajapinnan (engl. Representational State Transfer) kommunikointiin, joka on HTTP-protokollaa käyttävä tekniikka tiedon kuljettamiseen Internetissä. REST-rajapinnan avulla päästään eroon laitteisto- ja kieliriippuvaisuuksista. Nämä heterogeeniset asiakasohjelmat kommunikoivat tietokannan kanssa, jolloin HTTP-kutsukuorma voidaan tasata ja tulokset voidaan tallentaa välimuistiin. \cite{hecht2011nosql}  
 
-\subsection{Tehokkuus {\color{red} ehkä tämä pois kokonaan? vähän turha}}
-NoSQL-tietokannat ovat tehokkaampia prosessoimaan dataa kuin relaatiotietokannat. Skeemattomuus mahdollistaa ohjelmistokehityksen ilman tietokannan määrittelyprosessia. Perusoperaatiolla aikaa mitattaessa tyypillinen relaatiotietokanta jää nopeudessa tyypillisen NoSQL-tietokannan varjoon (taulukko \ref{mongonopeus}). Tehokuus saavutetaan tilanteissa, missä tietokannan vaatimukset keskittyvät tilanteisiin, jossa lukuoperaatioita tehdään suuri määrä suhteessa kirjoitusoperaatioihin. {\color{red} <<Selitä enemmän taulukkoa 1. >>}
-
-\begin{table}[h]
-    \begin{center}
-        \begin{tabular}{lrrll}
-
-               & \multicolumn{1}{c}{MySQL} & \multicolumn{1}{c}{MongoDB} \\ \hline
-        INSERT & 882078                    & 5781                        \\
-        UPDATE & 27782                     & 3                           \\
-        DELETE & 38079                     & 1                           \\ \hline
-        
-        \end{tabular}
-        \caption[MONGODB JA MYSQL NOPEUS]{Perusoperaatioiden suoritusaika millisekunteina, miljoona operaatiota           \cite{boicea2012mongodb}.}
-        \label{mongonopeus}
-    \end{center}
-\end{table}
-
-{\color{red}
-\subsection{Denormalisointi}
-
-Denormalization can be defined as the copying of the same data into multiple documents or tables in order to simplify/optimize query processing or to fit the user’s data into a particular data model. Most techniques described in this article leverage denormalization in one or another form.
-
-In general, denormalization is helpful for the following trade-offs:
-
-Query data volume or IO per query VS total data volume. Using denormalization one can group all data that is needed to process a query in one place. This often means that for different query flows the same data will be accessed in different combinations. Hence we need to duplicate data, which increases total data volume.
-Processing complexity VS total data volume. Modeling-time normalization and consequent query-time joins obviously increase complexity of the query processor, especially in distributed systems. Denormalization allow one to store data in a query-friendly structure to simplify query processing.
-
-
-Denormalization can be described as a process for reducing the degree of normalization with the aim of improving query processing performance. One of the main purposes of denormalization is to reduce the number of physical tables that must be accessed to retrieve the desired data by reducing the number of joins needed to derive a query answer 
-
-
-
-(https://highlyscalable.wordpress.com/2012/03/01/nosql-data-modeling-techniques/)
-
-\subsection{Koostaminen}
-All major genres of NoSQL provide soft schema capabilities in one way or another. Key-Value Stores and Graph Databases typically do not place constraints on values, so values can be comprised of arbitrary format. It is also possible to vary a number of records for one business entity by using composite keys. For example, a user account can be modeled as a set of entries with composite keys like UserID-name, UserID-email, UserID-messages and so on. If a user has no email or messages then a corresponding entry is not recorded. BigTable models support soft schema via a variable set of columns within a column family and a variable number of versions for one cell. Document databases are inherently schema-less, although some of them allow one to validate incoming data using a user-defined schema. Soft schema allows one to form classes of entities with complex internal structures (nested entities) and to vary the structure of particular entities. This feature provides two major facilities.
-
-Minimization of one-to-many relationships by means of nested entities and, consequently, reduction of joins.
-
-Masking of “technical” differences between business entities and modeling of heterogeneous business entities using one collection of documents or one table.
-
-
-These facilities are illustrated in the figure below. This figure depicts modeling of a product entity for an eCommerce business domain. Initially, we can say that all products have an ID, Price, and Description. Next, we discover that different types of products have different attributes like Author for Book or Length for Jeans. Some of these attributes have a one-to-many or many-to-many nature like Tracks in Music Albums. Next, it is possible that some entities can not be modeled using fixed types at all. For example, Jeans attributes are not consistent across brands and specific for each manufacturer. It is possible to overcome all these issues in a relational normalized data model, but solutions are far from elegant. Soft schema allows one to use a single Aggregate (product) that can model all types of products and their attributes:
-
-(kuva)
-
-Embedding with denormalization can greatly impact updates both in performance and consistency, so special attention should be paid to update flows.
-
-(https://highlyscalable.wordpress.com/2012/03/01/nosql-data-modeling-techniques/)
-
-\subsection{Ohjelmatason liitokset}
-
-Joins are rarely supported in NoSQL solutions. As a consequence of the “question-oriented” NoSQL nature, joins are often handled at design time as opposed to relational models where joins are handled at query execution time. Query time joins almost always mean a performance penalty, but in many cases one can avoid joins using Denormalization and Aggregates, i.e. embedding nested entities. Of course, in many cases joins are inevitable and should be handled by an application. The major use cases are:
-
-Many to many relationships are often modeled by links and require joins.
-Aggregates are often inapplicable when entity internals are the subject of frequent modifications. It is usually better to keep a record that something happened and join the records at query time as opposed to changing a value . For example, a messaging system can be modeled as a User entity that contains nested Message entities. But if messages are often appended, it may be better to extract Messages as independent entities and join them to the User at query time.
-
-(https://highlyscalable.wordpress.com/2012/03/01/nosql-data-modeling-techniques/)}
-
-
 \subsection{Kritiikki}
 
-NoSQL-tietokantoja on käytössä useimmilla suurimmilla ICT-alan toimijoilla kuten Googlella, Amazonilla, LinkedIn:llä ja Diggillä, mutta sille löytyy myös vastustajansa. Useimmat vastustajat argumentoivat, että uusilla teknologiolla on aina kehittymisvaihe, jolloin sitä ei kannata käyttää epävakaudesta ja teknologian nuoresta iästä johtuen. NoSQL-tietokantojen uskotaan olevan juuri tässä vaiheessa. Kattavaa määrää käyttötapauksia ei ole käyty läpi tai ohjelmistosta saattaa löytyä vielä virheitä, jotka tuotantoympäristössä aiheuttavat merkittävää haittaa liiketoiminnalle. \cite{tiwari2011professional,strauch2011nosql}
+NoSQL-tietokantoja on käytössä useimmilla suurimmilla ICT-alan toimijoilla kuten Googlella, Amazonilla ja LinkedIn:llä, mutta sille löytyy myös vastustajansa. Vastustajat argumentoivat, että uusilla teknologiolla on aina kehittymisvaihe, jolloin sitä ei kannata käyttää epävakaudesta ja teknologian nuoresta iästä johtuen. NoSQL-tietokantojen uskotaan olevan juuri tässä vaiheessa. Kattavaa määrää käyttötapauksia ei ole käyty läpi tai ohjelmistosta saattaa löytyä vielä virheitä, jotka tuotantoympäristössä aiheuttavat merkittävää haittaa liiketoiminnalle. \cite{tiwari2011professional,strauch2011nosql}
 
 NoSQL-tietokantojen hyödyllisyydestä ja käyttötarkoituksista on myös paljon epäselvyyttä. Selkeää konsensusta ei ole nähtävillä. Tieteellisestä kirjallisuudesta vasta-argumentteja NoSQL-tietokannoille ei juuri löydy, mutta internetin keskustelupalstoilla on huomattavissa trendi, jossa yritykset ovat lakanneet käyttämästä NoSQL-tietokantoja. Esimerkiksi Sarah Mei \citeyear{sarahmei2013mongodb} selvittää blogissaan miksi Diaspora, yhteisörahoitettu hajautettu sosiaalinen verkko, joutui ongelmiin valittuaan MongoDB:n relaatiotietokannan sijaan. Hylätessään relaationaalisen tiedonkäsittelyn Diasporan kehittäjät joutuivat uudelleen kehittämään osan relaatioalgebran ominaisuuksista ja toteuttamaan ne sovelluskerroksella. Yhdeksän kuukauden kehittämisen jälkeen he tekivät päätöksen rakentaa koko tietokantajärjestelmän uudelleen käyttäen relaatiotietokantaa. Sarah Mei väittää, että NoSQL-tietokannat eivät juurikaan eroa tyypillisestä välimuistista. Suurin ero oli se, että kehittäjillä ei ollut mahdollisuutta palauttaa järjestelmän tilaa tietokannan perusteella. Väitettä ei kuitenkaan ole perusteltu tutkimustiedolla, mutta herää kysymys,onko NoSQL-tietokantojen päälle sovelluksen rakentaminen vain matkaa kohti relaatioalgebran uudelleenkeksimistä.
 
@@ -511,7 +439,7 @@ Viime vuosina on kehitetty uusia SQL-kieleen perustuvia järjestelmiä, jotka ov
 
 Voidaankin esittää kysymys ovatko NoSQL-tietokannat vain kehittymättömiä tietokantoja, jotka ovat suurten yritysten ratkaisuja erityisiin ongelmiin? Esimerkiksi Googlen BigTable tyydytttää internetin suosituimman hakukoneen tietojenkäsittelyn vaatimukset. Se ei ole siis yleishyödyllinen ja tyypillisen ohjelmistoarkkitehtuurin käyttöön sopiva tietokanta. \cite{cattell2011scalable}
 
-Myös NoSQL nimitys saa kritiikkiä. Stonebrakerin \citeyear{stonebraker2010sql} mukaan NoSQL-tie\-to\-kan\-to\-jen nopeudella ei ole mitään merkitystä sen kanssa, että ne eivät käytä SQL-kieltä. Hänen mukaansa helposti replikoitavia relaatiotietokantajärjestelmiä, tietyillä ominaisuuksilla, tiettyyn käyttöön, on olemassa ja ne kehittyvät jatkuvasti nopeudessa. 
+Myös NoSQL nimitys saa kritiikkiä. Stonebrakerin \citeyear{stonebraker2010sql} mukaan NoSQL-tie\-to\-kan\-to\-jen nopeudella ei ole mitään merkitystä sen kanssa, että ne eivät käytä SQL-kieltä. Hänen mukaansa ne ovat helposti replikoitavia relaatiotietokantajärjestelmiä, tietyillä ominaisuuksilla, tiettyyn käyttöön ja ne kehittyvät nopeasti. 
 
 
 \jyusection{NOSQL-TIETOKANTOJEN LUOKITTELU JA ESIMERKKEJÄ}
@@ -539,8 +467,8 @@ Seuraavaksi esitellään luokitellut tietomallit omassa alaluvuissaan ja jokaise
         DynamoDB      &                  & reaaliaikaiset palvelut\\
         Riak          &                  & \\
     \midrule
-        MongoDB     & Dokumentti       & yleiskäyttö \\
-        Amazon CouchDB &                  & \\
+        MongoDB       & Dokumentti       & yleiskäyttö \\
+        Amazon CouchDB &                 & \\
     \midrule
         Cassandra    & Sarake           & tietovarastointi \\
         Hadoop       &                  & asiakkuudenhallinta \\
@@ -561,7 +489,7 @@ Seuraavaksi esitellään luokitellut tietomallit omassa alaluvuissaan ja jokaise
 
 \subsection{Avain-arvo-varasto}
 
-Yksinkertaisin NoSQL-tietomalli käyttää tiedon tallentamiseen avain-arvo-pareja (kuvio \ref{avainarvopari}). Kaikki data tallennetaan ja haetaan avaimen avulla. Yksinkertaiset avain-arvo-parit voidaan esittää esimerkiksi JSON-notaation (engl. JavaScript Object Notation) avulla. Samalla osoittimella tehty haku palauttaa aina siihen liittyvän datan. \cite{cattell2011scalable,seeger2009key}
+Yksinkertaisin NoSQL-tietomalli käyttää tiedon tallentamiseen avain-arvo-pareja (kuvio \ref{avainarvopari}). Kaikki data tallennetaan ja haetaan avaimen avulla. Yksinkertaiset avain-arvo-parit voidaan esittää esimerkiksi JSON-notaation (engl. JavaScript Object Notation) avulla. Samalla osoittimella tehty haku palauttaa aina siihen liittyvän datan \cite{cattell2011scalable,seeger2009key}.
 
 \begin{figure}[H]
 \begin{center}
@@ -595,9 +523,9 @@ put("sukunimi","Soikkeli");
 put("email","tsoikkeli@gmail.com");
 
 // Haku
-var arvo1 = get("etunimi");
-var arvo2 = get("sukunimi");
-var arvo3 = get("email");
+var etunimi = get("etunimi");
+var sukunimi = get("sukunimi");
+var email = get("email");
 
 // Tulostaa Tuomas-Matti Soikkeli tsoikkeli@gmail.com
 tulosta(etunimi + " " + sukunimi + " " + email); 
@@ -658,9 +586,9 @@ Dokumenttivaraston mukaiseen tietomalliin perustuvat tietokannat tallentavat dat
 
 Dokumenttivarastojen kannattajat väittävät, että tieto on semanttisesti hyvin samankaltaista, mutta syntaksi voi olla hyvin erilaista. Esimerkkinä reaalimaailman dokumentista on käyntikortti. Toisella on käyntikortissaan faksi, mutta se ei tarkoita että kaikkien käyntikorttien omistajien tulisi kirjoittaa käyntikorttiinsa: "Faksi : ei". Tätä dokumenttiparadigmaa käyttäen internetissä liikkuva tieto on kokonaisia, reaalimaailmaan liittyviä dokumentteja, ei niinkään relaatioita, tauluja tai rivejä. 
 
-Dokumenttivarastot ovat siis yleiskäyttöisiä tietovarastoja. Ne ovat jokseenkin tehokkaita, mutta niillä on myös piirteitä relaatiotietokannan ominaisuuksista. Dokumenttivarastoilla voi olla esimerkiksi monipuolinen kyselykieli, jopa SQL-kieltä on käytetty. {\color{red} viite}
+Dokumenttivarastot ovat siis yleiskäyttöisiä tietovarastoja. Ne ovat jokseenkin tehokkaita, mutta niillä on myös piirteitä relaatiotietokannan ominaisuuksista. Dokumenttivarastoilla voi olla myös monipuolinen kyselykieli. Tämän lisäksi on olemassa dokumenttivarastoja jotka toteuttava ACID-ominaisuudet. Yksi näistä on CouchDB, joka esitellään myöhemmin tässä luvussa.
 
-Seuraavaksi esitellään kaksi esimerkkiä dokumenttivarastoista: MongoDB ja CouchDB. Niistä esitellään perusominaisuudet ja tärkeimmät käyttökohteet. 
+Seuraavaksi esitellään kaksi esimerkkiä dokumenttivarastoista: MongoDB ja\newline CouchDB. Niistä esitellään perusominaisuudet ja tärkeimmät käyttökohteet. 
 
 MongoDB on vuonna 2009 julkaistu dokumenttivarasto ja sitä pidetäänkin yhtenä tärkeimpänä NoSQL-liikkeen puolestapuhujana. MongoDB-tietokanta tallentaa tietoa skeemavapaassa, ei-relaationaalisessa muodossa käyttäen JSON-formaattia. MongoDB on laajasti käytössä internetin suurilla toimijoilla, joista esimerkkeinä ovat MTV, Disqus, Craiglist, Disney , Sourceforge, The Guardian, Forbes, The New York Times, bit.ly, GitHub ja FourSquare \cite{boicea2012mongodb}.
 
@@ -668,9 +596,9 @@ MongoDB:n tärkeimmät ominaisuudet ovat tehokkuus, korkea saatavuus ja automaat
 
 MongoDB:n katsotaan soveltuvan tietokannaksi järjestelmiin, jossa tietoa on erittäin paljon, mutta tiedon skeema vaihtelee. MongoDB:ä suositellaan käytettäväksi operationaalisen älykkyyden hallintaan. Se tarkoittaa tiedon koostamista suurista tietovirroista reaaliaikaisesti. Tietovirroista koostetaan näkymiä, jotka antavat yritykselle tietoa päätöksenteon tueksi. Reaaliaikaista dataa koostetaan näkyväksi tiedoksi käyttämällä MapReduce:ia. Toisaalta MongoDB:n sopii myös tavanomaisen verkkokaupan tuotekatalogin tietovarastona, sillä sen joustava tietomalli antaa mahdollisuuden käyttää sitä myös perinteisissä käyttökohteissa, missä tyypillisesti käytetään relaatiotietokantaa \cite{mongodb}. 
 
-CouchDB on dokumenttivarasto, joka tallettaa datan puolirakenteelliseen muotoon, dokumentiksi. CouchDB on toteutettu funktionaalisella Erlang -ohjelmointikielellä, joka keskittyy rinnakkaisuuteen. Sen avulla CouchDB lupaa täyttää ACID-ominaisuudet \cite{couchdb}, mitä pidetään CouchDB:n ertyisominaisuutena. Vaikkakin ACID-ominaisuudet täyttyvät vain yhden dokumentin kontekstissa. {\color{red} viite}
+CouchDB on dokumenttivarasto, joka tallettaa datan puolirakenteelliseen muotoon, dokumentiksi. CouchDB on toteutettu funktionaalisella Erlang ohjelmointi\-kielellä, joka keskittyy rinnakkaisuuteen. Sen avulla CouchDB lupaa täyttää ACID-ominaisuudet , mitä pidetään CouchDB:n ertyisominaisuutena. ACID-ominaisuudet täyttyvät kuitenkin vain yhden dokumentin kontekstissa \cite{couchdb}.
 
-\subsection{Sarakevarastot}
+\subsection{Sarakevarasto}
 
 Sarakepohjaiset tietokannat tallentavat dataa relaatiomallin tavalla tauluihin, mutta sarakepohjaisesti. Relaatiomallissa data tallennetaan rivien mukaan. Sarakepohjaisesti dataa tallennettaessa parannetaan tehokkuutta, joka on tärkeää tietovarastoinnissa, CRM-järjestelmissä (egl. customer relationships maangement), ja metatiedon tallentamisessa (esimerkiksi kirjastokorttien katalogit). \cite{stonebraker2005c}
 
@@ -753,24 +681,42 @@ Verkkotietokannat sopivat sellaisiin tilanteisiin missä tieto on verkottunutta 
 Neo4j on Neo Technology -nimisen yrityksen valmistama avoimen lähdekoodin verkkotietokanta. Pääominaisuutena Neo4j:ssä katsotaan olevan ACID-ominaisuuksien noudattaminen. Neo4j tallettaa massivisen määrän dataa, mutta samalla takaa horisontaalisesti skaalattavissa ja tiedon jatkuvan saatavilla olon. Neo4j tarjoaa oman kyselykielen, jonka mainostetaan olevan tehokas ja luonnollista kieltä muistuttava kuten SQL-kieli. Hakuja on mahdollista tehdä myös REST-rajapinnan yli tai suoralla Java API:lla.
 
 
-{\color{red}
 \jyusection{YHTEENVETO}
 
-NoSQL-tietokannat eroavat suuresti relaatiotietokannoista ja eivät noudata relaatiomallia.  NoSQL-tieto\-kannoista puuttuu tarkoituksellisesti tiettyjä relaatiotietokantojen ominaisuuksia, jotta saavutetaan tehokkuutta ja skaalautuvuutta. NoSQL-tieto\-kannat kuuluvat useisiin eri kategorioihin, joita on vaikea luokitella. Eri kategoiroiden NoSQL-tietokannoilla on moninaisia käyttötapauksia ja rajoitteita.
+Tämän tutkielman tarkoitus on NoSQL-tietokantojen luokittelu ja perusominaisuuksien kuvaus. Tutkimuskysymykset olivat:
 
-Avain-arvo-varastot keskittyvät tiedon tehokkaaseen käsittelyyn ja järjestelmän skaalautuvuuteen, ja usein ne tarjoavat vain rajallisen hakukielen tai -raja\-pinnan. Dokumenttivarastot ovat yleiskäyttöisempiä ja ne käyttävät hieman monimutkaisempia hakujärjestelmiä. Sarakepohjaiset tietokannat ovat suosittuja järjestelmiä tietovarastointiin ja analytiikkaan. Verkkotietokannat ovat verkkomallia käyttäviä tietokantoja, joihin tietoa voidaan tallentaa verkkoon. Tämä on luonnollinen malli tallentaa esimerkiksi sosiaalisen median dataa.
+\begin{itemize}
 
-NoSQL-tietokantojen ominaispiirteitä ovat hajautettavuus, tehokkuus, yksinkertaisuus ja SQL-hakukielen puuttuminen. Näiden lisäksi NoSQL-tietokantojen oikeellisuumalli katsotaan olevan lähempänä BASE-ominaisuuksia kuin ACID-omi\-nai\-suuk\-sia, mutta poikkeuksia on runsaasti. 
+\item Mitä ovat NoSQL-tietokantojen perusominaisuudet?
 
-\emph{Hajautettavuus} mahdollistaa tiedon käsittelyn kuluttajatason tietokoneissa, joten järjestelmää on helppo laajentaa ilman suuria kustannuksia. \emph{Tehokkuus} NoSQL-tietokannoissa johtuu käytettävästä oikeellisuusmallista, lopulta oikeellinen, joka mahdollistaa ACID-omi\-nai\-suuk\-sista luopumisen. ACID-ominaisuudet aiheuttavat suuria lisäkustannuksia tiedonkäsittelylle. NoSQL tietokantojen \emph{Yksinkertaisuus} johtuu siitä, että SQL-kielen katsotaan olevan monimutkainen hakukieli ja siitä luovuttaessa saavutetaan helpompia ja lyhyempiä, halvempia, järjestelmäkehityksen vaiheita. Toisaalta kehittäjät joutuvat toteuttamaan joitakin relaatiotietokantojen ominaisuuksia sovellustasolla, mikäli niitä tarvitaan. \emph{Hakurajapintana} käytetään tyypillisesti REST-rajapintaa HTTP-protokollan avulla. Tämän lisäksi yleisiä ovat ohjelmointikielen oma API, jolloin myöskin saavutetaan yksinkertaisuutta ja tehokkuutta, kun hakukielen kaltaisia välikäsiä ei ole.
+\item Miten NoSQL-tietokantoja voidaan luokitella?
 
-NoSQL-tietokannat ovat saaneet osakseen huomattavan määrän kritiikkiä. Tutkittua tietoa on vähän johtuen teknologian nuoresta iästä, joten osa käyttäjäsegmentistä jättäytyy käyttämättä näitä teknologoita. Useat tutkijat ovat myös huomanneet, että NoSQL-tietokannat eivät ole vastaus kaikkiin tilanteisiin, vaan tietokanta tulee valita huolellisesti ja ei-relaatiotietokannat ovat yksi vaihtoehto muiden joukossa. Suuret yritykset kuten Google ja Amazon ovat valmistaneet omat järjestelmänsä käyttäen NoSQL-teknologoita, mutta se ei kerro, että kaikkien kehittäjien tulisi käyttää näitä tuotteita. Myöskän tehokkuus ei ole yksimielisesti NoSQL-tietokantojen ansiota. On argumentoitu ettei tehokkuus kärsi ACID-ominaisiuuksien toteuttamisesta vaan muista ominaisuuksista kuten esimerkiksi kirjanpidossa ja säikeiden hallinnassa. Uudet NewSQL-tietokannat tarjoavat relaatiotietokantojen ominaisuudet skaalattavassa ympäristössä, joten niiden kehittyessä esitetäänkin kysymys miksi enää käyttää NoSQL-tietokantoja.
+\item Miten NoSQL-tietokannat eroavat relaatiomalliin perustuvista tietokannoista?
+
+\item Mihin käyttötarkoitukseen NoSQL-tietokantoja voidaan käyttää?
+
+\end{itemize}
+
+NoSQL-tietokantojen ominaispiirteitä ovat skaalautuvuus, hajautettavuus, skeemattomuus sekä SQL-kielen puuttuminen. 
+Skaalautuvuus on ominaisuus, jonka avulla järjestelmään voidaan lisätä resursseja, jotta voidaan käsitellä tietoa tehokkaammin. Tietomäärä kasvaa jatkuvasti, jolloin tarvittaan yksinkertainen tapa lisätä järjestelmään resursseja. NoSQL-tietokannat skaalautuvat usein horisontaalisesti, jolloin voidaan käyttään tavanomaisia ja halpoja komponentteja.Hajautettavuus mahdollistaa tiedon käsittelyn kuluttajatason tietokoneissa, joten järjestelmää on helppo laajentaa ilman suuria kustannuksia. Tehokkuus NoSQL-tietokannoissa johtuu käytettävästä oikeellisuusmallista, lopulta oikeellinen, joka mahdollistaa ACID-omi\-nai\-suuk\-sista luopumisen. ACID-ominaisuudet aiheuttavat suuria lisäkustannuksia tiedonkäsittelylle. NoSQL tietokantojen yksinkertaisuus johtuu siitä, että SQL-kielen katsotaan olevan monimutkainen hakukieli ja siitä luovuttaessa saavutetaan helpompia ja lyhyempiä, halvempia, järjestelmäkehityksen vaiheita. Toisaalta kehittäjät joutuvat toteuttamaan joitakin relaatiotietokantojen ominaisuuksia sovellustasolla, mikäli niitä tarvitaan. Hakurajapintana käytetään tyypillisesti REST-rajapintaa HTTP-protokollan avulla. Tämän lisäksi yleisiä ovat ohjelmointikielen oma API.
+
+NoSQL-tietokannat voidaan luokitella usealla eri tavalla. Tässä tutkielmassa ne luokitellaan tietomallin perusteella neljään eri luokkaan: avain-arvo-varastot, dokumenttivarastot, sarakevarastot ja verkkotietokannat. Avain-arvo-varastot keskittyvät tiedon tehokkaaseen käsittelyyn ja järjestelmän skaalautuvuuteen, ja usein ne tarjoavat vain rajallisen hakukielen tai -raja\-pinnan. Usein avain-arvo-varastot ovat välimuistina toimivia, erittäin nopeita, muistinvaraisia ja yksinkertaisia tietovarastoja. Dokumenttivarastot ovat yleiskäyttöisempiä ja ne käyttävät hieman monimutkaisempia hakujärjestelmiä. Dokumenttivarastoissa nähdään myös usein relaatiotietokannasta tuttuja ominaisuuksia, kuten liitosoperaatioita. Jopa SQL-hakukieltä on käytetty. Myös tiedon oikeellisuutta ylläpitäviä ominaisuuksia on tuettu. Sarake\-pohjaiset tietokannat ovat suosittuja järjestelmiä suuren tietomäärän varastointiin ja analytiikkaan. Verkkotietokannoissa tieto varastoidaan nimensä mukaisesti sarakkeisiin, joka mahdollistaa rinnakkainlaskennan sekä tiedon koostamisen tehokkaasti esimerkiksi Map-Reduce -ohjelmointiparadigmalla. Verkkotietokannat ovat verkkomallia käyttäviä tietokantoja, joihin tietoa voidaan tallentaa verkkoon. Tietomallissa tieto linkittyy toisiinsa verkon kaarien avulla. Tämä on luonnollinen malli tallentaa esimerkiksi sosiaalisen median dataa, jossa linkittynyttä tietoa on paljon.
+
+NoSQL-tietokannat ovat saaneet osakseen huomattavan määrän kritiikkiä. Tutkittua tietoa on vähän johtuen teknologian nuoresta iästä, joten osa käyttäjäsegmentistä jättäytyy käyttämättä näitä teknologiota. Useat tutkijat ovat myös huomanneet, että NoSQL-tietokannat eivät ole vastaus kaikkiin tilanteisiin, vaan tietokanta tulee valita huolellisesti ja ei-relaatiotietokannat ovat yksi vaihtoehto muiden joukossa. Suuret yritykset kuten Google ja Amazon ovat valmistaneet omat järjestelmänsä käyttäen NoSQL-teknologoita, mutta se ei kerro, että kaikkien kehittäjien tulisi käyttää näitä tuotteita. Myöskän tehokkuus ei ole yksimielisesti NoSQL-tietokantojen ansiota. On argumentoitu ettei tehokkuus kärsi ACID-ominaisiuuksien toteuttamisesta vaan muista ominaisuuksista kuten esimerkiksi kirjanpidossa ja säikeiden hallinnassa. Uudet NewSQL-tietokannat tarjoavat relaatiotietokantojen ominaisuudet skaalattavassa ympäristössä, joten niiden kehittyessä esitetäänkin kysymys miksi enää käyttää NoSQL-tietokantoja.
+
+Avain-arvo-varastoja voidaan käyttää välimuistina, tiedon hajautukseen, viestijonoina eli avain-arvo-varastot ovat hyödyllisiä tehokkuutta ja pientä vasteaikaa vaativissa tehtävissä. Tälläisia ovat esimerkiksi reaaliaikaiset palvelut, jossa tieto välitetään perille mahdollisimman nopeasti. Dokumenttivarastot ovat yleiskäyttöisiä NoSQL-tietokantoja, ja niiden kerrotaan korvaavan relaatiotietokannat. Dokumenttivarastoja käytetään yksinkertaisten sovellusten tietokannaksi, mutta ACID-ominaisuuksien puuttumisen vuoksi niitä ei kannata käyttää kriittisten palveluiden perustana. Sarakevarastot ovat vakiinnuttaneet asemansa tietovarastoinnin ja analytiikan alalla. Suuret yritykset käyttävät lähes yksinomaan sarakavarastoja suurten tietomassojen tallentamiseen. Tallentamisen jälkeen tietoa voidaan tarkasti analysoida koostamalla suuresta tietomäärästä tärkeää tietoa yrityksen päätöksenteon avuksi.
+
+Tätä tutkimusta voidaan hyödyntää tehdessä teknologiavalintoja uusiin ohjelmistoprojekteihin. Myöskin vanhan teknologian päivittämisen yhteydessä kannattaa ajatella NoSQL-tekonologoita. Tätä tutkimusta voidaan käyttää myös tutkimuksen perustana ja perustiedon saantiin. 
+
+NoSQL-tietokantojen kehitysnopus on nopea, sillä jo tämän tutkielman kirjoittamisen aikana on syntynyt useita uusia tietokantoja, jotka voivat vaikuttaa tämän tutkielman tuloksiin. Tässä tutkimuksessa tehtiin ainoastaan tietomallin perusteella luokittelu. Jatkotutkimusta tarvitaan, miten NoSQL-tietokantoja voidaan luokitella muilla tavoin. Yksi tärkeä jatkotutkimusaihe onkin, tarvitaanko todella ACID-omainaisuuksia ja pystytäänkö tietoa käsittelemään nopeasti samalla taaten ACID-ominaisuudet. Uudet toimiat alalla mainostavat pystyävänsä tähän.
+
+
 
 
 %bibliography
 
 \jyubibliography{viitteet}
-}
+
 
 %\attachmentsection{LIITE 1 ENSIMMÄINEN LIITE}
 %\attachmentsection{LIITE 1 ENSIMMÄINEN LIITE}
